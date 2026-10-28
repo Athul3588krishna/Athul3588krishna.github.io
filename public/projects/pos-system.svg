@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="posBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f1728" />
+      <stop offset="100%" stop-color="#0b101c" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="16" fill="url(#posBg)" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Desktop App Titlebar -->
+  <rect x="24" y="24" width="752" height="42" rx="8" fill="#141d30" stroke="#1f2c45"/>
+  <circle cx="48" cy="45" r="5" fill="#ef4444" />
+  <circle cx="66" cy="45" r="5" fill="#eab308" />
+  <circle cx="84" cy="45" r="5" fill="#22c55e" />
+  
+  <text x="110" y="49" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#f8fafc">POS Enterprise Suite — Electron Desktop (v2.4.0)</text>
+
+  <rect x="580" y="34" width="180" height="22" rx="6" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="0.8"/>
+  <circle cx="594" cy="45" r="3.5" fill="#10b981" />
+  <text x="680" y="49" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#34d399" text-anchor="middle">OFFLINE-FIRST (SQLite ACID)</text>
+
+  <!-- Left: Checkout Billing Terminal & Barcode Scanner -->
+  <rect x="24" y="86" width="490" height="388" rx="12" fill="#0b1322" stroke="#1a273e"/>
+  
+  <div xmlns="http://www.w3.org/2000/svg">
+    <!-- Barcode input simulator -->
+    <rect x="44" y="106" width="450" height="38" rx="8" fill="#060c17" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="60" y="130" font-family="'JetBrains Mono', monospace" font-size="12" fill="#38bdf8">Scan Barcode / SKU: 8901030721495 █</text>
+
+    <!-- Cart items table -->
+    <rect x="44" y="156" width="450" height="24" rx="4" fill="#141f33"/>
+    <text x="56" y="172" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#94a3b8">ITEM DESCRIPTION</text>
+    <text x="250" y="172" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#94a3b8">QTY</text>
+    <text x="320" y="172" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#94a3b8">PRICE</text>
+    <text x="430" y="172" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#94a3b8">TOTAL</text>
+
+    <!-- Row 1 -->
+    <rect x="44" y="186" width="450" height="32" rx="4" fill="#080f1a"/>
+    <text x="56" y="206" font-family="'Inter', sans-serif" font-size="11" fill="#e2e8f0">Organic Basmati Rice (5kg)</text>
+    <text x="256" y="206" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8">2</text>
+    <text x="320" y="206" font-family="'JetBrains Mono', monospace" font-size="11" fill="#cbd5e1">₹ 420.00</text>
+    <text x="430" y="206" font-family="'JetBrains Mono', monospace" font-size="11" fill="#34d399">₹ 840.00</text>
+
+    <!-- Row 2 -->
+    <rect x="44" y="222" width="450" height="32" rx="4" fill="#0d1726"/>
+    <text x="56" y="242" font-family="'Inter', sans-serif" font-size="11" fill="#e2e8f0">Cold-Pressed Virgin Coconut Oil</text>
+    <text x="256" y="242" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8">1</text>
+    <text x="320" y="242" font-family="'JetBrains Mono', monospace" font-size="11" fill="#cbd5e1">₹ 290.00</text>
+    <text x="430" y="242" font-family="'JetBrains Mono', monospace" font-size="11" fill="#34d399">₹ 290.00</text>
+
+    <!-- Row 3 -->
+    <rect x="44" y="258" width="450" height="32" rx="4" fill="#080f1a"/>
+    <text x="56" y="278" font-family="'Inter', sans-serif" font-size="11" fill="#e2e8f0">Cardamom Special Grade A (100g)</text>
+    <text x="256" y="278" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8">3</text>
+    <text x="320" y="278" font-family="'JetBrains Mono', monospace" font-size="11" fill="#cbd5e1">₹ 180.00</text>
+    <text x="430" y="278" font-family="'JetBrains Mono', monospace" font-size="11" fill="#34d399">₹ 540.00</text>
+
+    <!-- Checkout total calculation -->
+    <rect x="44" y="304" width="450" height="80" rx="8" fill="#141f33" stroke="#223352"/>
+    <text x="64" y="332" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8">Items: 6 • Tax (GST 5%): ₹ 83.50</text>
+    <text x="64" y="364" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="800" fill="#f8fafc">Grand Total: ₹ 1,753.50</text>
+
+    <rect x="360" y="322" width="120" height="46" rx="8" fill="#10b981"/>
+    <text x="420" y="350" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#020617" text-anchor="middle">COMPLETE (F12)</text>
+
+    <!-- Footer SQLite status -->
+    <rect x="44" y="400" width="450" height="56" rx="8" fill="#050a12" stroke="#142135"/>
+    <text x="60" y="422" font-family="'JetBrains Mono', monospace" font-size="10" fill="#38bdf8">SQLite DB: d:\pos\data\retail_v1.db • WalMode: Enabled</text>
+    <text x="60" y="440" font-family="'Inter', sans-serif" font-size="10" fill="#94a3b8">Local transactions synced with instant rollback protection • 0 network dependency</text>
+  </div>
+
+  <!-- Right: Inventory & Dynamic Reporting Telemetry -->
+  <rect x="534" y="86" width="242" height="388" rx="12" fill="#0c1424" stroke="#1a273e"/>
+  
+  <text x="554" y="118" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Inventory Telemetry</text>
+
+  <!-- Metric 1: Stock Health -->
+  <rect x="554" y="136" width="202" height="68" rx="8" fill="#141f33" stroke="#223352"/>
+  <text x="568" y="160" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8">Active SKU Catalog</text>
+  <text x="568" y="188" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" fill="#38bdf8">1,840 Items</text>
+
+  <!-- Metric 2: Today's Shift Revenue -->
+  <rect x="554" y="214" width="202" height="68" rx="8" fill="#141f33" stroke="#223352"/>
+  <text x="568" y="238" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8">Shift Sales Volume</text>
+  <text x="568" y="266" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" fill="#34d399">₹ 48,920.00</text>
+
+  <!-- Metric 3: Low Stock Alerts -->
+  <rect x="554" y="292" width="202" height="68" rx="8" fill="#141f33" stroke="#223352"/>
+  <text x="568" y="316" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8">Low Stock Alerts</text>
+  <text x="568" y="344" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" fill="#fbbf24">3 Reorders Due</text>
+
+  <!-- Bottom Hardware integration badge -->
+  <rect x="554" y="372" width="202" height="82" rx="8" fill="#080f1a" stroke="#172338"/>
+  <text x="655" y="405" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#f1f5f9" text-anchor="middle">Hardware Drivers Ready</text>
+  <text x="655" y="425" font-family="'Inter', sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Thermal ESC/POS • Barcode USB</text>
+</svg>

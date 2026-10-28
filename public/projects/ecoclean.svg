@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18" />
+      <stop offset="50%" stop-color="#0e1726" />
+      <stop offset="100%" stop-color="#05141c" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="800" height="500" rx="16" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Subtle Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="160" y1="0" x2="160" y2="500" />
+    <line x1="320" y1="0" x2="320" y2="500" />
+    <line x1="480" y1="0" x2="480" y2="500" />
+    <line x1="640" y1="0" x2="640" y2="500" />
+  </g>
+
+  <!-- Browser Header Window -->
+  <rect x="24" y="24" width="752" height="42" rx="8" fill="#131b2e" stroke="#1e293b"/>
+  <circle cx="48" cy="45" r="5" fill="#ef4444" />
+  <circle cx="66" cy="45" r="5" fill="#eab308" />
+  <circle cx="84" cy="45" r="5" fill="#22c55e" />
+  <rect x="110" y="34" width="320" height="22" rx="6" fill="#0b1120" stroke="#1e293b"/>
+  <text x="125" y="49" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748b">https://ecoclean.portal/ai-dispatch</text>
+  <rect x="660" y="34" width="96" height="22" rx="6" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="0.8"/>
+  <text x="708" y="49" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#34d399" text-anchor="middle">LIVE SYSTEM</text>
+
+  <!-- Main Portal UI -->
+  <!-- Left Side: Vision AI Analysis Box -->
+  <rect x="24" y="86" width="460" height="388" rx="12" fill="#0f172a" fill-opacity="0.8" stroke="#334155" stroke-width="1.2"/>
+  
+  <!-- Image Simulation / AI Scan Area -->
+  <rect x="44" y="106" width="420" height="190" rx="10" fill="#020617" stroke="#1e293b"/>
+  <!-- Scan lines -->
+  <line x1="44" y1="180" x2="464" y2="180" stroke="#06b6d4" stroke-width="2" filter="url(#glowFilter)" stroke-dasharray="10 6"/>
+  <!-- Bounding box -->
+  <rect x="140" y="130" width="160" height="130" rx="6" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="6 4"/>
+  <rect x="140" y="112" width="130" height="18" rx="4" fill="#10b981"/>
+  <text x="205" y="125" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#020617" text-anchor="middle">RECYCLABLE PLASTIC 94%</text>
+
+  <!-- AI Inference Info -->
+  <text x="44" y="325" font-family="'Space Grotesk', sans-serif" font-size="17" font-weight="700" fill="#f8fafc">Gemini Vision AI Engine</text>
+  <text x="44" y="348" font-family="'Inter', sans-serif" font-size="13" fill="#94a3b8">Model: gemini-1.5-flash • Multimodal Confidence: 0.942</text>
+  
+  <rect x="44" y="366" width="126" height="30" rx="6" fill="#1e293b"/>
+  <text x="107" y="385" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8" text-anchor="middle">Severity: High</text>
+
+  <rect x="180" y="366" width="140" height="30" rx="6" fill="#1e293b"/>
+  <text x="250" y="385" font-family="'JetBrains Mono', monospace" font-size="11" fill="#34d399" text-anchor="middle">+50 EcoPoints</text>
+
+  <rect x="330" y="366" width="134" height="30" rx="6" fill="#1e293b"/>
+  <text x="397" y="385" font-family="'JetBrains Mono', monospace" font-size="11" fill="#a78bfa" text-anchor="middle">Zone: Malappuram</text>
+
+  <!-- Right Side: Leaflet Map & Dispatch Metrics -->
+  <rect x="504" y="86" width="272" height="186" rx="12" fill="#0b1324" stroke="#1e293b"/>
+  <!-- Mini map simulation -->
+  <path d="M 520,130 Q 560,110 600,140 T 680,120 T 760,150" fill="none" stroke="#334155" stroke-width="4"/>
+  <path d="M 540,240 Q 600,200 660,220 T 750,180" fill="none" stroke="#1e293b" stroke-width="6"/>
+  <circle cx="610" cy="140" r="10" fill="#06b6d4" fill-opacity="0.3" filter="url(#glowFilter)"/>
+  <circle cx="610" cy="140" r="5" fill="#22d3ee" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="680" cy="190" r="8" fill="#10b981" fill-opacity="0.3"/>
+  <circle cx="680" cy="190" r="4" fill="#34d399" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="520" y="112" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#94a3b8">LEAFLET GIS DISPATCH</text>
+
+  <!-- Municipal Resolution Tracker -->
+  <rect x="504" y="288" width="272" height="186" rx="12" fill="#0f172a" stroke="#1e293b"/>
+  <text x="524" y="316" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#f1f5f9">Resolution Pipeline</text>
+  
+  <!-- Step 1 -->
+  <circle cx="530" cy="345" r="4" fill="#10b981"/>
+  <text x="546" y="349" font-family="'Inter', sans-serif" font-size="12" fill="#e2e8f0">Report Submitted</text>
+  <text x="730" y="349" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">10:14 AM</text>
+
+  <!-- Step 2 -->
+  <circle cx="530" cy="380" r="4" fill="#06b6d4"/>
+  <text x="546" y="384" font-family="'Inter', sans-serif" font-size="12" fill="#e2e8f0">AI Validated & Tagged</text>
+  <text x="730" y="384" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">10:15 AM</text>
+
+  <!-- Step 3 -->
+  <circle cx="530" cy="415" r="4" fill="#f59e0b"/>
+  <text x="546" y="419" font-family="'Inter', sans-serif" font-size="12" fill="#e2e8f0">Squad Dispatched</text>
+  <text x="730" y="419" font-family="'JetBrains Mono', monospace" font-size="10" fill="#f59e0b">En Route</text>
+
+  <rect x="524" y="440" width="232" height="22" rx="4" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="0.8"/>
+  <text x="640" y="455" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#34d399" text-anchor="middle">Avg Resolution: 2.4 Hours</text>
+</svg>

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="agriBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07120e" />
+      <stop offset="50%" stop-color="#0a1a14" />
+      <stop offset="100%" stop-color="#06141c" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="50%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <filter id="agriGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="16" fill="url(#agriBg)" stroke="#133124" stroke-width="2"/>
+
+  <!-- Top bar -->
+  <rect x="24" y="24" width="752" height="42" rx="8" fill="#0d241c" stroke="#1b4332"/>
+  <circle cx="48" cy="45" r="5" fill="#ef4444" />
+  <circle cx="66" cy="45" r="5" fill="#eab308" />
+  <circle cx="84" cy="45" r="5" fill="#22c55e" />
+  <rect x="110" y="34" width="360" height="22" rx="6" fill="#071410" stroke="#1a3b2e"/>
+  <text x="125" y="49" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6ee7b7">https://agripulse.ai/agrimitra-360</text>
+  <rect x="610" y="34" width="146" height="22" rx="6" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="0.8"/>
+  <text x="683" y="49" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" fill="#34d399" text-anchor="middle">PyTorch • ReAct Agent</text>
+
+  <!-- Left: PyTorch/MobileNet Vision Diagnostic + HSV Lesion Analysis -->
+  <rect x="24" y="86" width="450" height="388" rx="12" fill="#081812" stroke="#143628"/>
+  
+  <text x="44" y="118" font-family="'Space Grotesk', sans-serif" font-size="17" font-weight="700" fill="#f8fafc">PyTorch &amp; OpenCV Vision Diagnostic</text>
+  <text x="44" y="138" font-family="'Inter', sans-serif" font-size="12" fill="#86efac">Model: MobileNet Transfer Learned • HSV Lesion Segmentation</text>
+
+  <!-- Leaf diagnostic scan simulation -->
+  <rect x="44" y="154" width="410" height="150" rx="10" fill="#040c09" stroke="#1a4231"/>
+  
+  <!-- Stylized Leaf Path -->
+  <path d="M 120,270 Q 150,180 230,170 Q 250,230 180,280 Z" fill="#15803d" stroke="#22c55e" stroke-width="2"/>
+  <!-- Lesion spot with HSV bounding box -->
+  <circle cx="180" cy="215" r="14" fill="#b45309" fill-opacity="0.8"/>
+  <rect x="156" y="192" width="48" height="46" rx="4" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 2"/>
+  <text x="180" y="186" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#f87171" text-anchor="middle">Bacterial Blight</text>
+
+  <!-- Severity telemetry metrics -->
+  <g transform="translate(260, 170)">
+    <text x="0" y="16" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8">Confidence Score</text>
+    <text x="0" y="36" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" fill="#34d399">96.8% Match</text>
+
+    <text x="0" y="66" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8">HSV Lesion Severity</text>
+    <text x="0" y="86" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" fill="#fbbf24">14.2% Area Affected</text>
+
+    <text x="0" y="112" font-family="'JetBrains Mono', monospace" font-size="10" fill="#6ee7b7">Status: Early Stage (Treatable)</text>
+  </g>
+
+  <!-- Malayalam Bilingual Voice Interaction Wave (Web Speech API) -->
+  <rect x="44" y="320" width="410" height="74" rx="8" fill="#0d241c" stroke="#1c4837"/>
+  <circle cx="68" cy="357" r="14" fill="#10b981" fill-opacity="0.2"/>
+  <text x="68" y="362" font-family="'Inter', sans-serif" font-size="12" fill="#34d399" text-anchor="middle">🎙️</text>
+  <text x="94" y="348" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#6ee7b7">Web Speech API • Malayalam &amp; English Voice</text>
+  <text x="94" y="368" font-family="'Inter', sans-serif" font-size="12" fill="#e2e8f0">"തക്കാളിയിലെ രോഗം എന്താണ്, മരുന്ന് പറയൂ?"</text>
+
+  <!-- Fast API Microservice Indicator -->
+  <rect x="44" y="408" width="410" height="48" rx="8" fill="#051410" stroke="#123628"/>
+  <text x="60" y="428" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8">FastAPI Microservice: POST /api/v1/diagnose</text>
+  <text x="60" y="444" font-family="'Inter', sans-serif" font-size="10" fill="#94a3b8">Latency: 142ms • PyTorch Inference Engine • CORS Secure</text>
+
+  <!-- Right: ReAct Multi-Tool Agentic Cockpit -->
+  <rect x="494" y="86" width="282" height="388" rx="12" fill="#081812" stroke="#143628"/>
+  
+  <text x="514" y="118" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700" fill="#f8fafc">ReAct Multi-Tool Agent</text>
+  <text x="514" y="136" font-family="'Inter', sans-serif" font-size="11" fill="#86efac">Autonomous Decision Loop &amp; RAG</text>
+
+  <!-- Tool 1: Mandi Price -->
+  <rect x="514" y="154" width="242" height="64" rx="8" fill="#0f291f" stroke="#1b4635"/>
+  <text x="526" y="174" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#34d399">Tool: MandiPriceFetcher</text>
+  <text x="526" y="192" font-family="'Inter', sans-serif" font-size="11" fill="#cbd5e1">Tomato: ₹24/kg • Pepper: ₹480/kg</text>
+  <text x="526" y="206" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">Market: Malappuram APMC</text>
+
+  <!-- Tool 2: Weather Spray Safety -->
+  <rect x="514" y="228" width="242" height="64" rx="8" fill="#0f291f" stroke="#1b4635"/>
+  <text x="526" y="248" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#38bdf8">Tool: Open-Meteo SprayAdvisor</text>
+  <text x="526" y="266" font-family="'Inter', sans-serif" font-size="11" fill="#cbd5e1">Safe to spray until 4:00 PM</text>
+  <text x="526" y="280" font-family="'JetBrains Mono', monospace" font-size="10" fill="#f59e0b">Wind: 6 km/h • Humidity: 72%</text>
+
+  <!-- Tool 3: KAU/ICAR RAG -->
+  <rect x="514" y="302" width="242" height="74" rx="8" fill="#0f291f" stroke="#1b4635"/>
+  <text x="526" y="322" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#c084fc">Tool: KAU/ICAR RAG VectorIndex</text>
+  <text x="526" y="340" font-family="'Inter', sans-serif" font-size="11" fill="#cbd5e1">Bordeaux mixture 1% spray</text>
+  <text x="526" y="356" font-family="'Inter', sans-serif" font-size="10" fill="#94a3b8">Source: KAU Package of Practices 2024</text>
+
+  <!-- Bottom Badge -->
+  <rect x="514" y="390" width="242" height="66" rx="8" fill="#040c09" stroke="#1a4231"/>
+  <text x="635" y="416" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#34d399" text-anchor="middle">AgriPulse (AgriMitra 360)</text>
+  <text x="635" y="436" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Empowering smallholder farmers with AI</text>
+</svg>

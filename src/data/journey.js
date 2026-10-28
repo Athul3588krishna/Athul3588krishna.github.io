@@ -1,0 +1,110 @@
+export const journeyData = [
+  {
+    id: "journey-1",
+    year: "2022",
+    title: "B.Sc. Computer Science Journey Begins",
+    category: "Undergraduate Foundations",
+    shortDesc: "Enrolled at KRS Sree Narayana College, Valanchery under University of Calicut.",
+    fullDesc: "Began rigorous computer science foundations covering Python, C programming, object-oriented concepts, relational databases (SQL), data structures, algorithms, and computational theory.",
+    technologies: ["Python", "C", "Data Structures", "Algorithms", "DBMS", "Operating Systems"],
+    icon: "GraduationCap",
+    status: "Completed",
+    highlight: "Developed solid analytical foundations in core computing and algorithmic logic."
+  },
+  {
+    id: "journey-2",
+    year: "2024 – 2025",
+    title: "8-Month Intensive Full Stack Immersion",
+    category: "Professional Specialization",
+    shortDesc: "Certified User by Illinois Institute of Technology & Entri Elevate.",
+    fullDesc: "Completed an intensive 8-month full stack engineering program focusing on modern web standards, the MERN ecosystem (React, Node.js, Express, MongoDB Atlas), and cloud database architectures.",
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB Atlas", "REST APIs", "Modern Web Standards"],
+    icon: "Award",
+    status: "Completed",
+    highlight: "Earned Certified User credential from Illinois Institute of Technology & Entri Elevate."
+  },
+  {
+    id: "journey-3",
+    year: "2025",
+    title: "Graduated B.Sc. Computer Science & Built Ey Auto",
+    category: "Academic Capstone",
+    shortDesc: "Engineered Ey Auto – Auto Rickshaw Booking Platform as Final Year Project.",
+    fullDesc: "Graduated with distinction from KRS Sree Narayana College, Valanchery. Built 'Ey Auto', a full-stack ride-booking platform with dedicated Passenger, Driver, and Admin modules utilizing Socket.IO for real-time tracking.",
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO", "Role-Based Auth"],
+    icon: "Layers",
+    status: "Completed",
+    highlight: "Delivered comprehensive 3-module ride hailing system with real-time WebSockets."
+  },
+  {
+    id: "journey-4",
+    year: "2025",
+    title: "Enrolled in MCA at MEA Engineering College",
+    category: "Master's Degree",
+    shortDesc: "Commenced Master of Computer Applications at MEA Engineering College, Perinthalmanna (KTU).",
+    fullDesc: "Advanced into postgraduate software engineering focusing on machine learning, deep learning architectures, advanced distributed systems, cloud computing, and AI-assisted automation.",
+    technologies: ["Machine Learning", "Cloud Systems", "Advanced Algorithms", "AI Engineering"],
+    icon: "BookOpen",
+    status: "In Progress",
+    highlight: "Deepening theoretical and practical mastery of AI models and scalable systems."
+  },
+  {
+    id: "journey-5",
+    year: "2025",
+    title: "Built POS Management System Desktop Application",
+    category: "Desktop & Offline-First",
+    shortDesc: "Engineered offline-first retail POS software using Electron.js and SQLite.",
+    fullDesc: "Architected a standalone desktop POS solution with fast billing, inventory tracking, dynamic reporting, and local SQLite database storage for reliable data handling without cloud dependency.",
+    technologies: ["Electron.js", "React.js", "Node.js", "SQLite", "Desktop Architecture"],
+    icon: "Code2",
+    status: "Completed",
+    highlight: "Created zero-latency offline billing system with local relational ACID storage."
+  },
+  {
+    id: "journey-6",
+    year: "2026",
+    title: "Engineered EcoClean AI Smart Waste Management Portal",
+    category: "AI & Full Stack",
+    shortDesc: "Integrated Google Gemini Vision AI and Leaflet GIS mapping.",
+    fullDesc: "Built an AI-powered waste reporting platform that enables citizens to report waste using photos and GPS location, with Gemini Vision AI classifying waste categories and Leaflet.js managing municipal complaints.",
+    technologies: ["MERN Stack", "Gemini Vision AI", "Leaflet.js", "Eco-Points Gamification"],
+    icon: "Sparkles",
+    status: "Completed",
+    highlight: "Applied multimodal computer vision for automated civic grievance handling."
+  },
+  {
+    id: "journey-7",
+    year: "2026",
+    title: "Pioneered AgriPulse (AgriMitra 360) Multimodal Platform",
+    category: "Flagship AI / Agentic Innovation",
+    shortDesc: "Combining PyTorch, MobileNet, OpenCV, RAG, ReAct Agent, and Malayalam Voice Interaction.",
+    fullDesc: "Engineered AgriPulse (AgriMitra 360), a breakthrough agriculture platform featuring a PyTorch/MobileNet crop disease scanner, OpenCV HSV lesion severity analysis, a ReAct agent with multi-tool calling for mandi prices and spray safety, and bilingual Malayalam/English voice interaction.",
+    technologies: ["PyTorch", "MobileNet", "OpenCV", "FastAPI", "RAG", "ReAct Agent", "Web Speech API", "MERN"],
+    icon: "Sparkles",
+    status: "Flagship Project",
+    highlight: "Integrated computer vision, RAG, tool calling, and Malayalam voice interaction in one unified system."
+  },
+  {
+    id: "journey-hackathon",
+    year: "Sept 2026",
+    title: "AI Conclave Hackathon — Amal Jyothi College of Engineering",
+    category: "Hackathon & Innovation",
+    shortDesc: "Competed with agriculture AI platform & Telegram chatbot eliminating middleman expenses.",
+    fullDesc: "Competed at Amal Jyothi College of Engineering, Kottayam, developing an agriculture-focused AI web platform with an integrated Telegram chatbot designed to eliminate middleman expenses and empower farmers with direct market connectivity.",
+    technologies: ["Telegram Bot API", "Python", "FastAPI", "React.js", "Marketplace", "AI Advisory"],
+    icon: "Trophy",
+    status: "Hackathon",
+    highlight: "Demonstrated direct market connectivity and Telegram chatbot for grassroots farmers."
+  },
+  {
+    id: "journey-8",
+    year: "2027",
+    title: "MCA Graduation & Enterprise Readiness",
+    category: "Career Horizon",
+    shortDesc: "Culmination of Master of Computer Applications degree at MEA Engineering College.",
+    fullDesc: "Completing comprehensive graduate degree, ready to deploy advanced AI/ML systems, full-stack architectures, and production-grade software in top technology organizations.",
+    technologies: ["Enterprise AI", "Distributed Systems", "Cloud Deployment", "Microservices"],
+    icon: "CheckCircle2",
+    status: "Upcoming",
+    highlight: "Targeting high-impact AI/ML Developer & Full Stack Software Engineering positions."
+  }
+];

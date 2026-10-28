@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560">
+  <defs>
+    <linearGradient id="fccGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a14" />
+      <stop offset="50%" stop-color="#181528" />
+      <stop offset="100%" stop-color="#0e0c1a" />
+    </linearGradient>
+    <linearGradient id="fccBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="560" rx="16" fill="url(#fccGrad)" stroke="#2b2542" stroke-width="2"/>
+  <rect x="20" y="20" width="760" height="520" rx="12" fill="none" stroke="url(#fccBorder)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <rect x="30" y="30" width="740" height="500" rx="10" fill="#0b0a12" fill-opacity="0.9" stroke="#1c192d"/>
+
+  <circle cx="400" cy="95" r="34" fill="#251f38" stroke="#fbbf24" stroke-width="2"/>
+  <text x="400" y="103" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#fbbf24" text-anchor="middle">( ; )</text>
+
+  <text x="400" y="160" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="600" fill="#fbbf24" letter-spacing="4" text-anchor="middle">FREECODECAMP VERIFIED CERTIFICATION</text>
+  <text x="400" y="200" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="800" fill="#f8fafc" text-anchor="middle">JavaScript Algorithms &amp; Data Structures</text>
+  
+  <text x="400" y="240" font-family="'Inter', sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">This certifies that</text>
+  <text x="400" y="280" font-family="'Space Grotesk', sans-serif" font-size="26" font-weight="700" fill="#f59e0b" text-anchor="middle">ATHUL KRISHNA R</text>
+  
+  <line x1="250" y1="295" x2="550" y2="295" stroke="#334155" stroke-width="1"/>
+
+  <text x="400" y="330" font-family="'Inter', sans-serif" font-size="13" fill="#cbd5e1" text-anchor="middle">Has successfully demonstrated mastery of JavaScript algorithmic problem-solving,</text>
+  <text x="400" y="352" font-family="'Inter', sans-serif" font-size="13" fill="#cbd5e1" text-anchor="middle">object-oriented design, functional programming patterns, and core algorithmic complexity.</text>
+
+  <g transform="translate(130, 380)">
+    <rect x="0" y="0" width="125" height="26" rx="6" fill="#251f38"/>
+    <text x="62" y="17" font-family="'JetBrains Mono', monospace" font-size="11" fill="#fbbf24" text-anchor="middle">Data Structures</text>
+
+    <rect x="135" y="0" width="120" height="26" rx="6" fill="#251f38"/>
+    <text x="195" y="17" font-family="'JetBrains Mono', monospace" font-size="11" fill="#fbbf24" text-anchor="middle">Algorithm Design</text>
+
+    <rect x="265" y="0" width="125" height="26" rx="6" fill="#251f38"/>
+    <text x="327" y="17" font-family="'JetBrains Mono', monospace" font-size="11" fill="#fbbf24" text-anchor="middle">ES6+ JavaScript</text>
+
+    <rect x="400" y="0" width="140" height="26" rx="6" fill="#251f38"/>
+    <text x="470" y="17" font-family="'JetBrains Mono', monospace" font-size="11" fill="#fbbf24" text-anchor="middle">Time Complexity</text>
+  </g>
+
+  <text x="80" y="480" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748b">Credential ID: FCC-JS-DSA-91823</text>
+  <text x="80" y="500" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8">Issuing Body: freeCodeCamp.org</text>
+
+  <text x="720" y="480" font-family="'JetBrains Mono', monospace" font-size="11" fill="#34d399" text-anchor="end">Status: Verified</text>
+  <text x="720" y="500" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8" text-anchor="end">Date: 2024</text>
+</svg>

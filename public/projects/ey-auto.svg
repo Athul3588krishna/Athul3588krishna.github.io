@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bgAutoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#180e29" />
+    </linearGradient>
+    <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <filter id="autoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" rx="16" fill="url(#bgAutoGrad)" stroke="#1f2937" stroke-width="2"/>
+
+  <!-- Top bar -->
+  <rect x="24" y="24" width="752" height="42" rx="8" fill="#131b2e" stroke="#1f2937"/>
+  <circle cx="48" cy="45" r="5" fill="#ef4444" />
+  <circle cx="66" cy="45" r="5" fill="#eab308" />
+  <circle cx="84" cy="45" r="5" fill="#22c55e" />
+  <rect x="110" y="34" width="340" height="22" rx="6" fill="#0b1120" stroke="#1e293b"/>
+  <text x="125" y="49" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8">https://eyauto.internal/dispatch-engine</text>
+  <rect x="640" y="34" width="116" height="22" rx="6" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="0.8"/>
+  <text x="698" y="49" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" fill="#c084fc" text-anchor="middle">WS: 42ms LATENCY</text>
+
+  <!-- Left: Live Geospatial Transit Route -->
+  <rect x="24" y="86" width="480" height="388" rx="12" fill="#030712" stroke="#1f2937"/>
+  <!-- Map streets grid -->
+  <path d="M 40,150 L 484,150 M 40,280 L 484,280 M 40,390 L 484,390" stroke="#111827" stroke-width="14"/>
+  <path d="M 120,86 L 120,474 M 260,86 L 260,474 M 400,86 L 400,474" stroke="#111827" stroke-width="14"/>
+
+  <!-- Dynamic Transit Polyline (OpenRouteService) -->
+  <path d="M 120,390 L 120,280 L 260,280 L 260,150 L 400,150" fill="none" stroke="url(#routeGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#autoGlow)"/>
+
+  <!-- Pickup Marker -->
+  <circle cx="120" cy="390" r="10" fill="#10b981" fill-opacity="0.3"/>
+  <circle cx="120" cy="390" r="5" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
+  <rect x="60" y="410" width="120" height="24" rx="4" fill="#111827" stroke="#10b981"/>
+  <text x="120" y="426" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#34d399" text-anchor="middle">Pickup: College Gate</text>
+
+  <!-- Auto Rickshaw Live Position -->
+  <circle cx="260" cy="220" r="14" fill="#f59e0b" fill-opacity="0.3" filter="url(#autoGlow)"/>
+  <circle cx="260" cy="220" r="7" fill="#fbbf24" stroke="#ffffff" stroke-width="2"/>
+  <rect x="280" y="208" width="110" height="24" rx="4" fill="#1e293b" stroke="#f59e0b"/>
+  <text x="335" y="224" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#fbbf24" text-anchor="middle">KL-10-AZ-4921</text>
+
+  <!-- Destination Marker -->
+  <circle cx="400" cy="150" r="10" fill="#8b5cf6" fill-opacity="0.3"/>
+  <circle cx="400" cy="150" r="5" fill="#8b5cf6" stroke="#ffffff" stroke-width="2"/>
+  <rect x="350" y="105" width="100" height="24" rx="4" fill="#111827" stroke="#8b5cf6"/>
+  <text x="400" y="121" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#c084fc" text-anchor="middle">Drop: Town Hub</text>
+
+  <!-- Right: Dispatch Card & Telemetry -->
+  <rect x="524" y="86" width="252" height="388" rx="12" fill="#0f172a" stroke="#1f2937"/>
+  
+  <text x="544" y="118" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700" fill="#f8fafc">Ride Active</text>
+  <rect x="544" y="132" width="212" height="74" rx="8" fill="#1e293b" stroke="#334155"/>
+  <text x="560" y="156" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8">Estimated Distance</text>
+  <text x="560" y="180" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" fill="#38bdf8">2.8 km (8 min)</text>
+  <text x="690" y="180" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" fill="#34d399">₹ 45</text>
+
+  <!-- Driver Card -->
+  <rect x="544" y="218" width="212" height="114" rx="8" fill="#111827" stroke="#334155"/>
+  <circle cx="574" cy="248" r="16" fill="#f59e0b" fill-opacity="0.2"/>
+  <text x="574" y="253" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#fbbf24" text-anchor="middle">🛺</text>
+  <text x="602" y="244" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#f1f5f9">Suresh Kumar</text>
+  <text x="602" y="260" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">Verified Driver ★ 4.9</text>
+  
+  <rect x="556" y="280" width="188" height="24" rx="4" fill="#0f172a"/>
+  <text x="650" y="296" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8" text-anchor="middle">Socket ID: sck_7a92f8</text>
+
+  <!-- Technology Badges -->
+  <text x="544" y="360" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Stack Integrations</text>
+  <rect x="544" y="372" width="100" height="24" rx="4" fill="#1e293b"/>
+  <text x="594" y="388" font-family="'JetBrains Mono', monospace" font-size="10" fill="#38bdf8" text-anchor="middle">Socket.io</text>
+
+  <rect x="652" y="372" width="104" height="24" rx="4" fill="#1e293b"/>
+  <text x="704" y="388" font-family="'JetBrains Mono', monospace" font-size="10" fill="#34d399" text-anchor="middle">Leaflet GIS</text>
+
+  <rect x="544" y="404" width="212" height="24" rx="4" fill="#1e293b"/>
+  <text x="650" y="420" font-family="'JetBrains Mono', monospace" font-size="10" fill="#c084fc" text-anchor="middle">OpenRouteService API</text>
+
+  <rect x="544" y="438" width="212" height="26" rx="6" fill="#06b6d4" fill-opacity="0.15" stroke="#06b6d4" stroke-width="0.8"/>
+  <text x="650" y="455" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#22d3ee" text-anchor="middle">Zero Commission Model</text>
+</svg>
