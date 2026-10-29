@@ -8,53 +8,46 @@ export default {
   theme: {
     extend: {
       colors: {
-        dark: {
-          bg: '#08090D',
-          surface: '#0F111A',
-          card: '#141724',
+        apple: {
+          black: '#000000',
+          bg: '#000000',
+          card: '#161617',
+          cardHover: '#1d1d1f',
+          surface: '#1c1c1e',
+          surfaceElevated: '#2c2c2e',
+          text: '#f5f5f7',
+          gray: '#86868b',
+          darkGray: '#424245',
           border: 'rgba(255, 255, 255, 0.08)',
-          hover: 'rgba(255, 255, 255, 0.04)',
-        },
-        primary: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-        },
-        cyan: {
-          400: '#22d3ee',
-          500: '#06b6d4',
-        },
-        violet: {
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#7c3aed',
+          borderHover: 'rgba(255, 255, 255, 0.16)',
+          blue: '#2997ff',
+          blueHover: '#0071e3',
+          green: '#30d158',
         }
       },
       fontFamily: {
-        sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
-        display: ['"Space Grotesk"', '"Inter"', 'sans-serif'],
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"SF Pro Display"',
+          '"SF Pro Text"',
+          '"Helvetica Neue"',
+          '"Inter"',
+          'sans-serif'
+        ],
+        mono: [
+          '"SF Mono"',
+          '"JetBrains Mono"',
+          'Menlo',
+          'Monaco',
+          'Consolas',
+          'monospace'
+        ],
       },
-      animation: {
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'glow': 'glow 3s ease-in-out infinite alternate',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-        glow: {
-          '0%': { opacity: '0.4' },
-          '100%': { opacity: '0.8' },
-        }
-      },
-      backgroundImage: {
-        'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',
-        'grid-pattern': "radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px)",
+      borderRadius: {
+        'apple': '28px',
+        'apple-lg': '32px',
+        'apple-sm': '18px',
       }
     },
   },

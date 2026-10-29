@@ -104,7 +104,7 @@ export const journeyData = [
     fullDesc: "Completing comprehensive graduate degree, ready to deploy advanced AI/ML systems, full-stack architectures, and production-grade software in top technology organizations.",
     technologies: ["Enterprise AI", "Distributed Systems", "Cloud Deployment", "Microservices"],
     icon: "CheckCircle2",
-    status: "Upcoming",
+    status: "Ongoing",
     highlight: "Targeting high-impact AI/ML Developer & Full Stack Software Engineering positions."
   }
 ];

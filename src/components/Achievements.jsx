@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, Award, Mic, Users, Star, CheckCircle, Sparkles } from 'lucide-react';
+import { Trophy, Award, Mic, Users, Star, CheckCircle2 } from 'lucide-react';
 import { achievementsData } from '../data/achievements';
 
 const categoryIcon = {
@@ -13,21 +13,17 @@ const categoryIcon = {
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <section id="achievements" className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
       
-      {/* Background Accent */}
-      <div className="absolute top-1/2 right-10 w-72 h-72 bg-amber-600/10 rounded-full blur-[100px] pointer-events-none" />
-
-      {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
+      {/* Apple Section Header */}
+      <div className="max-w-3xl mb-14">
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono mb-4"
+          className="text-xs font-semibold uppercase tracking-widest text-neutral-600 dark:text-[#86868b] mb-3"
         >
-          <Trophy className="w-3.5 h-3.5" />
-          <span>RECOGNITION &amp; ACTIVITIES</span>
+          Milestones &amp; Honors
         </motion.div>
 
         <motion.h2
@@ -35,9 +31,9 @@ export default function Achievements() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white tracking-tight"
+          className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-900 dark:text-[#f5f5f7]"
         >
-          Achievements &amp; <span className="text-gradient-amber">Milestones</span>
+          Recognition.
         </motion.h2>
 
         <motion.p
@@ -45,68 +41,53 @@ export default function Achievements() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-4 text-slate-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed"
+          className="mt-4 text-base sm:text-lg text-neutral-700 dark:text-[#86868b] leading-relaxed"
         >
-          Collegiate hackathons, technical speaker sessions, and competitive project evaluations.
+          Collegiate hackathons, technical symposiums, and engineering capstone milestones.
         </motion.p>
       </div>
 
-      {/* Grid of Achievement Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Grid of Achievement Cards with High Contrast */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {achievementsData.map((item, idx) => {
           const IconComp = categoryIcon[item.category] || Trophy;
 
           return (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="glass-card rounded-2xl p-6 border border-white/[0.08] relative overflow-hidden flex flex-col justify-between group hover:border-amber-500/40"
+              transition={{ duration: 0.4, delay: idx * 0.08 }}
+              className="apple-card p-6 flex flex-col justify-between group hover:border-black/[0.18] dark:hover:border-white/[0.18]"
             >
               <div>
-                {/* Header row: Year & Category */}
-                <div className="flex items-center justify-between gap-3 mb-4">
-                  <span className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
-                    <IconComp className="w-4 h-4" />
-                  </span>
-
-                  <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-amber-500/15 border border-amber-500/30 text-amber-300">
+                <div className="flex items-center justify-between text-xs text-neutral-600 dark:text-[#86868b] mb-3">
+                  <span className="text-[10px] font-semibold text-neutral-800 dark:text-[#f5f5f7] bg-black/[0.04] dark:bg-white/[0.06] px-2.5 py-0.5 rounded-full border border-black/[0.06] dark:border-white/[0.06]">
                     {item.badge}
                   </span>
+                  <span className="font-medium">{item.year}</span>
                 </div>
 
-                <span className="text-[11px] font-mono text-slate-400 block mb-1">
-                  {item.event} • {item.year}
-                </span>
-
-                <h3 className="text-base sm:text-lg font-display font-bold text-white group-hover:text-amber-300 transition-colors">
+                <h3 className="text-base font-bold text-neutral-900 dark:text-[#f5f5f7] tracking-tight group-hover:text-[#0071e3] dark:group-hover:text-white transition-colors">
                   {item.title}
                 </h3>
 
-                <p className="mt-2.5 text-xs text-slate-300 leading-relaxed font-normal">
-                  {item.description}
+                <p className="mt-1 text-xs text-[#0071e3] dark:text-[#2997ff] font-semibold">
+                  {item.event}
                 </p>
 
-                {/* Impact Statement */}
-                <div className="mt-4 p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] text-xs text-slate-300 flex items-start gap-2">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
-                  <span>{item.impact}</span>
-                </div>
+                <p className="mt-3 text-xs text-neutral-700 dark:text-[#86868b] leading-relaxed">
+                  {item.description}
+                </p>
               </div>
 
-              {/* Technologies */}
-              <div className="mt-5 pt-3 border-t border-white/[0.06] flex flex-wrap gap-1.5">
-                {item.technologies.map((t) => (
-                  <span
-                    key={t}
-                    className="px-2 py-0.5 rounded-md text-[11px] font-mono text-slate-400 bg-black/40 border border-white/[0.04]"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
+              {item.impact && (
+                <div className="mt-5 pt-3 border-t border-black/[0.06] dark:border-white/[0.06] flex items-start gap-2 text-xs text-neutral-700 dark:text-[#86868b]">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#30d158] shrink-0 mt-0.5" />
+                  <span>{item.impact}</span>
+                </div>
+              )}
             </motion.div>
           );
         })}

@@ -5,9 +5,7 @@ import {
   ExternalLink,
   Github,
   CheckCircle2,
-  AlertTriangle,
-  Layers,
-  Sparkles,
+  AlertCircle,
   Cpu,
   UserCheck,
   Workflow
@@ -15,11 +13,19 @@ import {
 
 export default function ProjectModal({ project, onClose }) {
   useEffect(() => {
+    // Lock body scroll on mobile and desktop while modal is open
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, [onClose]);
 
   if (!project) return null;
@@ -28,215 +34,176 @@ export default function ProjectModal({ project, onClose }) {
     <AnimatePresence>
       <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
         
-        {/* Backdrop */}
+        {/* Apple Frosted Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-black/90 backdrop-blur-md"
+          className="fixed inset-0 bg-black/70 backdrop-blur-2xl"
         />
 
-        {/* Modal Container */}
+        {/* Apple Modal Sheet with Dual Theme Support */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          initial={{ opacity: 0, scale: 0.96, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-5xl rounded-3xl bg-[#0d0f1a] border border-white/10 shadow-2xl shadow-cyan-950/60 overflow-hidden z-10 my-8 flex flex-col max-h-[92vh]"
+          exit={{ opacity: 0, scale: 0.96, y: 15 }}
+          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          className="relative w-full max-w-4xl rounded-[28px] bg-white dark:bg-[#161617] border border-black/[0.1] dark:border-white/[0.1] shadow-2xl overflow-hidden z-10 my-8 flex flex-col max-h-[90vh]"
         >
           {/* Header Bar */}
-          <div className="flex items-center justify-between p-5 sm:p-6 border-b border-white/[0.08] bg-slate-900/70 backdrop-blur-md sticky top-0 z-20">
+          <div className="flex items-center justify-between p-5 sm:p-6 border-b border-black/[0.08] dark:border-white/[0.08] bg-white/90 dark:bg-[#161617]/90 backdrop-blur-xl sticky top-0 z-20">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300">
+                <span className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-black/[0.04] dark:bg-white/[0.08] text-neutral-700 dark:text-[#86868b]">
                   {project.category}
                 </span>
-                <span className="text-xs text-slate-400 font-mono">Case Study &amp; Architecture</span>
+                <span className="text-xs text-neutral-500 dark:text-[#86868b]">Architectural Breakdown</span>
               </div>
-              <h3 className="text-lg sm:text-2xl font-display font-bold text-white">
-                {project.title} — {project.subtitle}
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900 dark:text-[#f5f5f7]">
+                {project.title}
               </h3>
             </div>
 
             <button
               onClick={onClose}
-              className="p-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-slate-400 hover:text-white transition-colors"
-              aria-label="Close project modal"
+              className="p-2 rounded-full bg-black/[0.05] dark:bg-white/[0.08] hover:bg-black/[0.1] dark:hover:bg-white/[0.16] text-neutral-700 dark:text-[#86868b] hover:text-black dark:hover:text-white transition-all focus:outline-none"
+              aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
-          {/* Modal Scrollable Content */}
-          <div className="p-5 sm:p-8 overflow-y-auto space-y-8">
+          {/* Scrollable Body Content */}
+          <div className="p-5 sm:p-8 space-y-8 overflow-y-auto touch-scroll">
             
-            {/* Cover Screenshot / Preview */}
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-slate-950 shadow-2xl">
+            {/* Project Image Preview */}
+            <div className="rounded-[20px] overflow-hidden border border-black/[0.08] dark:border-white/[0.08] bg-black">
               <img
                 src={project.coverImage}
                 alt={project.title}
-                className="w-full h-auto max-h-[460px] object-cover object-top"
+                className="w-full h-auto max-h-72 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-              
-              {/* Quick links banner over cover */}
-              <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-3">
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((t) => (
-                    <span
-                      key={t}
-                      className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium text-cyan-200 bg-slate-900/90 border border-cyan-500/30 backdrop-blur-md"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-white/10 backdrop-blur-md transition-colors"
-                  >
-                    <Github className="w-4 h-4" />
-                    <span>Source Code</span>
-                  </a>
-
-                  <a
-                    href={project.liveDemo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-white bg-cyan-500 hover:bg-cyan-400 shadow-md shadow-cyan-500/25 transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    <span>Live Preview</span>
-                  </a>
-                </div>
-              </div>
             </div>
 
-            {/* Problem & Solution Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-5 rounded-2xl bg-rose-950/20 border border-rose-500/20">
-                <div className="flex items-center gap-2 text-rose-400 text-sm font-display font-bold mb-2">
-                  <AlertTriangle className="w-4 h-4" />
-                  <span>The Problem</span>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                  {project.caseStudy?.problem || project.description}
-                </p>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-emerald-950/20 border border-emerald-500/20">
-                <div className="flex items-center gap-2 text-emerald-400 text-sm font-display font-bold mb-2">
-                  <CheckCircle2 className="w-4 h-4" />
-                  <span>The Engineering Solution</span>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                  {project.caseStudy?.solution || project.tagline}
-                </p>
-              </div>
-            </div>
-
-            {/* Key Features List */}
-            <div className="space-y-3">
-              <h4 className="text-base font-display font-bold text-white flex items-center gap-2">
-                <Workflow className="w-4 h-4 text-cyan-400" />
-                <span>Core Capabilities &amp; Architecture Modules</span>
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {project.features.map((feat, idx) => (
-                  <div
-                    key={idx}
-                    className="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-start gap-2.5 text-xs sm:text-sm text-slate-300"
-                  >
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span>{feat}</span>
+            {/* Problem & Solution Bento */}
+            {project.caseStudy && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="apple-card-elevated p-5">
+                  <div className="flex items-center gap-2 text-neutral-600 dark:text-[#86868b] text-xs font-semibold uppercase tracking-wider mb-2">
+                    <AlertCircle className="w-4 h-4 text-neutral-600 dark:text-[#86868b]" />
+                    <span>The Problem</span>
                   </div>
-                ))}
-              </div>
-            </div>
+                  <p className="text-sm text-neutral-800 dark:text-[#f5f5f7] leading-relaxed">
+                    {project.caseStudy.problem}
+                  </p>
+                </div>
 
-            {/* Technical Architecture & Data Flow */}
+                <div className="apple-card-elevated p-5">
+                  <div className="flex items-center gap-2 text-[#0071e3] dark:text-[#2997ff] text-xs font-semibold uppercase tracking-wider mb-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#0071e3] dark:text-[#2997ff]" />
+                    <span>The Solution</span>
+                  </div>
+                  <p className="text-sm text-neutral-800 dark:text-[#f5f5f7] leading-relaxed">
+                    {project.caseStudy.solution}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Architecture Details */}
             {project.caseStudy?.architecture && (
-              <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/60 border border-white/[0.08] space-y-2">
-                <h4 className="text-sm font-display font-bold text-cyan-400 flex items-center gap-2">
-                  <Cpu className="w-4 h-4" />
+              <div className="apple-card-elevated p-6">
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-[#86868b] mb-3">
+                  <Workflow className="w-4 h-4 text-[#0071e3] dark:text-[#2997ff]" />
                   <span>System Architecture &amp; Data Pipeline</span>
-                </h4>
-                <p className="text-xs sm:text-sm text-slate-300 font-mono leading-relaxed">
+                </div>
+                <p className="text-sm text-neutral-700 dark:text-[#86868b] leading-relaxed">
                   {project.caseStudy.architecture}
                 </p>
               </div>
             )}
 
-            {/* Challenges & My Contribution */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              
-              {/* Engineering Challenges */}
-              {project.caseStudy?.challenges && (
-                <div className="space-y-3">
-                  <h4 className="text-sm font-display font-bold text-amber-400 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4" />
-                    <span>Technical Challenges Overcome</span>
-                  </h4>
-                  <ul className="space-y-2.5">
-                    {project.caseStudy.challenges.map((c, i) => (
-                      <li
-                        key={i}
-                        className="text-xs sm:text-sm text-slate-300 leading-relaxed pl-3 border-l-2 border-amber-500/40"
-                      >
-                        {c}
-                      </li>
-                    ))}
-                  </ul>
+            {/* Engineering Challenges & Solutions */}
+            {project.caseStudy?.challenges && (
+              <div className="apple-card-elevated p-6">
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-[#86868b] mb-4">
+                  <Cpu className="w-4 h-4 text-[#0071e3] dark:text-[#2997ff]" />
+                  <span>Key Technical Challenges Solved</span>
                 </div>
-              )}
+                <ul className="space-y-3">
+                  {project.caseStudy.challenges.map((challenge, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-sm text-neutral-700 dark:text-[#86868b]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#0071e3] dark:bg-[#2997ff] mt-2 shrink-0" />
+                      <span>{challenge}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-              {/* My Personal Contribution */}
-              {project.caseStudy?.myContribution && (
-                <div className="p-5 rounded-2xl bg-cyan-950/20 border border-cyan-500/20 space-y-2.5">
-                  <h4 className="text-sm font-display font-bold text-cyan-300 flex items-center gap-2">
-                    <UserCheck className="w-4 h-4" />
-                    <span>My Individual Contribution</span>
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                    {project.caseStudy.myContribution}
-                  </p>
+            {/* My Contribution */}
+            {project.caseStudy?.myContribution && (
+              <div className="apple-card-elevated p-6">
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-[#86868b] mb-3">
+                  <UserCheck className="w-4 h-4 text-[#30d158]" />
+                  <span>My Engineering Contributions</span>
                 </div>
-              )}
+                <p className="text-sm text-neutral-700 dark:text-[#86868b] leading-relaxed">
+                  {project.caseStudy.myContribution}
+                </p>
+              </div>
+            )}
 
+            {/* Full Technologies Used */}
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-[#86868b] block mb-3">
+                Full Technology Stack
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="apple-tag text-xs"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
 
           </div>
 
-          {/* Modal Footer CTA */}
-          <div className="p-5 sm:p-6 border-t border-white/[0.08] bg-slate-900/60 flex flex-wrap items-center justify-between gap-4">
-            <span className="text-xs text-slate-400 font-mono">
-              Designed &amp; Engineered by Athul Krishna R
-            </span>
+          {/* Footer Actions Strip */}
+          <div className="p-5 sm:p-6 border-t border-black/[0.08] dark:border-white/[0.08] bg-white dark:bg-[#161617] flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-200 bg-white/[0.06] hover:bg-white/[0.1] border border-white/10 transition-colors"
-              >
-                <Github className="w-4 h-4" />
-                <span>GitHub Repository</span>
-              </a>
               <a
                 href={project.liveDemo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 shadow-lg shadow-cyan-500/25 transition-colors"
+                className="apple-btn-primary text-xs py-2 px-5 inline-flex items-center gap-2"
               >
-                <ExternalLink className="w-4 h-4" />
-                <span>Launch Live Preview</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span>Open Live Demo</span>
+              </a>
+
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="apple-btn-secondary text-xs py-2 px-5 inline-flex items-center gap-2"
+              >
+                <Github className="w-3.5 h-3.5" />
+                <span>Source Code</span>
               </a>
             </div>
+
+            <button
+              onClick={onClose}
+              className="text-xs text-neutral-600 dark:text-[#86868b] hover:text-neutral-900 dark:hover:text-white transition-colors"
+            >
+              Dismiss
+            </button>
           </div>
 
         </motion.div>

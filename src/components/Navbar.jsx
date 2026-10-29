@@ -1,20 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, FileDown } from 'lucide-react';
+import { Menu, X, FileDown, Sun, Moon } from 'lucide-react';
 import { profileData } from '../data/profile';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [isDark, setIsDark] = useState(true);
+
+  // Initialize and persist theme
+  useEffect(() => {
+    const saved = localStorage.getItem('akr_theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialDark = saved ? saved === 'dark' : (saved === null ? true : prefersDark);
+    
+    setIsDark(initialDark);
+    if (initialDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const nextDark = !isDark;
+    setIsDark(nextDark);
+    if (nextDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('akr_theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('akr_theme', 'light');
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 20);
 
-      // Section tracker for active nav highlight
-      const sections = ['hero', 'journey', 'education', 'skills', 'certificates', 'projects', 'about', 'contact'];
-      const scrollPos = window.scrollY + 200;
+      const sections = ['hero', 'about', 'projects', 'education', 'skills', 'journey', 'certifications', 'contact'];
+      const scrollPos = window.scrollY + 180;
 
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -34,96 +60,110 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#hero', id: 'hero' },
-    { name: 'Journey', href: '#journey', id: 'journey' },
+    { name: 'About', href: '#about', id: 'about' },
+    { name: 'Projects', href: '#projects', id: 'projects' },
     { name: 'Education', href: '#education', id: 'education' },
     { name: 'Skills', href: '#skills', id: 'skills' },
-    { name: 'Certificates', href: '#certificates', id: 'certificates' },
-    { name: 'Projects', href: '#projects', id: 'projects' },
-    { name: 'About', href: '#about', id: 'about' },
-    { name: 'Contact', href: '#contact', id: 'contact' },
+    { name: 'Journey', href: '#journey', id: 'journey' },
+    { name: 'Credentials', href: '#certifications', id: 'certifications' },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'glass-nav py-3.5 shadow-2xl shadow-cyan-950/20'
-          : 'bg-transparent py-5'
+          ? 'apple-nav py-3'
+          : 'bg-transparent py-4 border-b border-black/[0.04] dark:border-white/[0.04]'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo */}
+          {/* Logo / Name */}
           <a
             href="#hero"
-            className="flex items-center gap-2.5 group focus:outline-none"
+            className="flex items-center gap-3 group focus:outline-none"
             aria-label="Athul Krishna R Portfolio Home"
           >
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 via-blue-600/20 to-violet-600/20 border border-cyan-500/30 flex items-center justify-center font-display font-bold text-lg text-cyan-400 group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.35)] transition-all duration-300">
-              <span className="tracking-tight text-white group-hover:text-cyan-300 transition-colors">
-                {profileData.initials}
-              </span>
-              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
+            <div className="w-8 h-8 rounded-full bg-black dark:bg-white text-white dark:text-black font-semibold text-xs flex items-center justify-center tracking-tight transition-transform duration-200 group-hover:scale-105 shadow-sm">
+              {profileData.initials}
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-semibold text-sm tracking-wide text-white group-hover:text-cyan-400 transition-colors">
+              <span className="font-semibold text-sm tracking-tight text-[#1d1d1f] dark:text-[#f5f5f7] transition-colors">
                 {profileData.name}
               </span>
-              <span className="text-[11px] font-mono text-slate-400">
-                AI/ML &amp; Full Stack Developer
+              <span className="text-[11px] text-[#86868b] hidden sm:block">
+                MCA @ MEA • Full Stack Developer
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-1 xl:gap-1.5 p-1 rounded-full bg-slate-900/60 border border-white/[0.08] backdrop-blur-md">
+          <div className="hidden md:flex items-center gap-1 p-1 rounded-full bg-black/[0.04] dark:bg-[#161617]/90 border border-black/[0.06] dark:border-white/[0.08] backdrop-blur-xl">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`relative px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-200 ${
+                  className={`relative px-3.5 py-1.5 rounded-full text-xs font-medium tracking-tight transition-all duration-200 ${
                     isActive
-                      ? 'text-cyan-300 bg-cyan-500/15 shadow-[0_0_12px_rgba(6,182,212,0.25)]'
-                      : 'text-slate-300 hover:text-white hover:bg-white/[0.05]'
+                      ? 'text-[#1d1d1f] dark:text-white bg-black/[0.08] dark:bg-white/[0.1]'
+                      : 'text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7] hover:bg-black/[0.03] dark:hover:bg-white/[0.04]'
                   }`}
                 >
                   {link.name}
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeNavIndicator"
-                      className="absolute inset-0 rounded-full border border-cyan-400/40"
-                      transition={{ type: 'spring', stiffness: 350, damping: 30 }}
-                    />
-                  )}
                 </a>
               );
             })}
           </div>
 
-          {/* Action CTA: Resume Button */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Action CTAs & Theme Toggle */}
+          <div className="hidden sm:flex items-center gap-2">
+            
+            {/* Apple Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full bg-black/[0.04] dark:bg-white/[0.08] text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7] border border-black/[0.06] dark:border-white/[0.08] transition-all"
+              title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              aria-label="Toggle visual theme"
+            >
+              {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
+            </button>
+
+            <a
+              href="#contact"
+              className="px-3.5 py-2 rounded-full text-xs font-medium text-[#86868b] hover:text-[#1d1d1f] dark:hover:text-[#f5f5f7] transition-colors"
+            >
+              Contact
+            </a>
+
             <a
               href={profileData.resumePath}
               download="Athul_Krishna_Resume.pdf"
-              className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              className="apple-btn-primary text-xs py-2 px-4 inline-flex items-center gap-1.5"
             >
-              <FileDown className="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5" />
+              <FileDown className="w-3.5 h-3.5" />
               <span>Resume</span>
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex sm:hidden items-center gap-2">
+          {/* Mobile Right Bar: Theme Toggle + Menu */}
+          <div className="flex md:hidden items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full bg-black/[0.04] dark:bg-[#161617] border border-black/[0.06] dark:border-white/[0.08] text-[#86868b]"
+              aria-label="Toggle theme"
+            >
+              {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
+            </button>
+
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg bg-slate-900/80 border border-white/10 text-slate-300 hover:text-white hover:border-cyan-500/50 focus:outline-none"
-              aria-label="Open mobile navigation menu"
+              className="p-2 rounded-full bg-black/[0.04] dark:bg-[#161617] border border-black/[0.06] dark:border-white/[0.08] text-[#86868b] focus:outline-none"
+              aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -133,11 +173,11 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25 }}
-            className="sm:hidden glass-nav border-b border-white/10 px-4 pt-3 pb-6 space-y-3"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden apple-nav px-4 pt-3 pb-6 space-y-3"
           >
             <div className="grid grid-cols-2 gap-2 pt-2">
               {navLinks.map((link) => (
@@ -145,10 +185,10 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-3 py-2.5 rounded-lg text-xs font-medium ${
+                  className={`px-3 py-2.5 rounded-2xl text-xs font-medium ${
                     activeSection === link.id
-                      ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30'
-                      : 'text-slate-300 hover:bg-white/[0.05] hover:text-white'
+                      ? 'bg-black/[0.08] dark:bg-white/[0.1] text-[#1d1d1f] dark:text-white'
+                      : 'text-[#86868b] hover:bg-black/[0.03] dark:hover:bg-white/[0.04]'
                   }`}
                 >
                   {link.name}
@@ -156,15 +196,22 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div className="pt-3 border-t border-white/[0.08] flex flex-col gap-2.5">
+            <div className="pt-3 border-t border-black/[0.06] dark:border-white/[0.08] flex flex-col gap-2">
               <a
                 href={profileData.resumePath}
                 download="Athul_Krishna_Resume.pdf"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-md shadow-cyan-500/20"
+                className="apple-btn-primary w-full py-2.5 text-xs text-center justify-center flex items-center gap-2"
               >
                 <FileDown className="w-4 h-4" />
                 Download Resume (PDF)
+              </a>
+              <a
+                href="#contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="apple-btn-secondary w-full py-2.5 text-xs text-center justify-center"
+              >
+                Let's Connect
               </a>
             </div>
           </motion.div>

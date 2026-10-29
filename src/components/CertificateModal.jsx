@@ -1,147 +1,141 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Award, FileText, CheckCircle2, ShieldCheck, Download } from 'lucide-react';
+import { X, ExternalLink, Award, ShieldCheck } from 'lucide-react';
 
-export default function CertificateModal({ certificate, onClose }) {
+export default function CertificateModal({ cert, certificate, onClose }) {
+  const item = cert || certificate;
+
   useEffect(() => {
+    // Lock body scroll on touch and desktop while modal is open
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, [onClose]);
 
-  if (!certificate) return null;
+  if (!item) return null;
 
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
         
-        {/* Backdrop */}
+        {/* Apple Frosted Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-black/85 backdrop-blur-md"
+          className="fixed inset-0 bg-black/70 backdrop-blur-2xl"
         />
 
         {/* Modal Window */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          initial={{ opacity: 0, scale: 0.96, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-4xl rounded-3xl bg-[#0f111c] border border-white/10 shadow-2xl shadow-cyan-950/50 overflow-hidden z-10 my-8 flex flex-col max-h-[90vh]"
+          exit={{ opacity: 0, scale: 0.96, y: 15 }}
+          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          className="relative w-full max-w-3xl rounded-[28px] bg-white dark:bg-[#161617] border border-black/[0.1] dark:border-white/[0.1] shadow-2xl overflow-hidden z-10 my-8 flex flex-col max-h-[90vh]"
         >
           {/* Header */}
-          <div className="flex items-center justify-between p-5 sm:p-6 border-b border-white/[0.08] bg-slate-900/60 backdrop-blur-md">
+          <div className="flex items-center justify-between p-5 sm:p-6 border-b border-black/[0.08] dark:border-white/[0.08] bg-white/90 dark:bg-[#161617]/90 backdrop-blur-xl sticky top-0 z-20">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
-                <Award className="w-5 h-5" />
+              <div className="w-9 h-9 rounded-full bg-black/[0.04] dark:bg-white/[0.08] border border-black/[0.06] dark:border-white/[0.08] flex items-center justify-center text-neutral-900 dark:text-[#f5f5f7]">
+                <Award className="w-4 h-4 text-[#0071e3] dark:text-[#2997ff]" />
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-display font-bold text-white line-clamp-1">
-                  {certificate.title}
+                <h3 className="text-base sm:text-lg font-bold text-neutral-900 dark:text-[#f5f5f7] tracking-tight line-clamp-1">
+                  {item.title}
                 </h3>
-                <p className="text-xs text-slate-400 font-mono">
-                  {certificate.issuer} • {certificate.date}
+                <p className="text-xs text-neutral-600 dark:text-[#86868b]">
+                  {item.issuer} • {item.date}
                 </p>
               </div>
             </div>
 
             <button
               onClick={onClose}
-              className="p-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-slate-400 hover:text-white transition-colors"
-              aria-label="Close certificate lightbox"
+              className="p-2 rounded-full bg-black/[0.05] dark:bg-white/[0.08] hover:bg-black/[0.1] dark:hover:bg-white/[0.16] text-neutral-700 dark:text-[#86868b] hover:text-black dark:hover:text-white transition-all focus:outline-none"
+              aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
-          {/* Modal Body */}
-          <div className="p-5 sm:p-8 overflow-y-auto space-y-6">
+          {/* Body Preview */}
+          <div className="p-5 sm:p-8 space-y-6 overflow-y-auto touch-scroll">
             
-            {/* Certificate Preview Image */}
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black/50 shadow-inner group">
+            {/* Visual Preview */}
+            <div className="rounded-[20px] overflow-hidden border border-black/[0.08] dark:border-white/[0.08] bg-neutral-900 dark:bg-black p-2 flex items-center justify-center">
               <img
-                src={certificate.image}
-                alt={certificate.title}
-                className="w-full h-auto max-h-[480px] object-contain mx-auto"
-                loading="lazy"
+                src={item.image}
+                alt={item.title}
+                className="w-full h-auto max-h-96 object-contain rounded-xl"
               />
-              <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-slate-900/90 border border-cyan-500/40 text-cyan-300 font-mono text-xs flex items-center gap-1.5 backdrop-blur-md">
-                <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Verified Credential</span>
-              </div>
             </div>
 
-            {/* Description & Highlight */}
-            <div className="space-y-3">
-              <h4 className="text-sm font-display font-bold text-slate-200">
-                Credential Overview &amp; Learning Scope:
-              </h4>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                {certificate.description}
-              </p>
+            {/* Credential Details Bento */}
+            <div className="apple-card-elevated p-5 space-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="text-xs text-neutral-600 dark:text-[#86868b]">Credential Identifier</span>
+                <span className="text-xs font-mono font-semibold text-neutral-900 dark:text-[#f5f5f7] bg-black/[0.04] dark:bg-white/[0.06] px-2.5 py-1 rounded-full border border-black/[0.06] dark:border-white/[0.08]">
+                  {item.credentialId}
+                </span>
+              </div>
 
-              {certificate.highlight && (
-                <div className="p-3.5 rounded-xl bg-cyan-950/40 border border-cyan-500/20 text-xs sm:text-sm text-cyan-200 flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>{certificate.highlight}</span>
+              {item.highlight && (
+                <div className="pt-2 text-xs text-neutral-700 dark:text-[#86868b] leading-relaxed">
+                  <span className="text-neutral-900 dark:text-[#f5f5f7] font-semibold">Highlight: </span>
+                  {item.highlight}
+                </div>
+              )}
+
+              {item.skills && (
+                <div className="pt-2">
+                  <span className="text-[11px] font-semibold text-neutral-600 dark:text-[#86868b] uppercase tracking-wider block mb-2">
+                    Verified Competencies:
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {item.skills.map((skill) => (
+                      <span key={skill} className="apple-tag text-[10px]">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
 
-            {/* Covered Skills */}
-            <div>
-              <span className="text-xs font-mono uppercase tracking-wider text-slate-400 block mb-2">
-                Demonstrated Skills &amp; Standards:
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {certificate.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 rounded-lg text-xs font-mono text-slate-200 bg-white/[0.04] border border-white/[0.08]"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Credential ID and Verification Footer */}
-            <div className="pt-4 border-t border-white/[0.08] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div className="text-xs font-mono text-slate-400">
-                <span>Credential Reference: </span>
-                <span className="text-cyan-400 font-semibold">{certificate.credentialId}</span>
-              </div>
-
-              <div className="flex items-center gap-3 w-full sm:w-auto">
-                {certificate.pdf && (
-                  <a
-                    href={certificate.image}
-                    download={`${certificate.id}.svg`}
-                    className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs font-medium text-slate-200 bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 transition-colors"
-                  >
-                    <Download className="w-3.5 h-3.5 text-slate-400" />
-                    <span>Download File</span>
-                  </a>
-                )}
-
-                <a
-                  href={certificate.verifyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 transition-colors shadow-lg shadow-cyan-500/20"
-                >
-                  <ExternalLink className="w-3.5 h-3.5" />
-                  <span>Verify Online</span>
-                </a>
-              </div>
-            </div>
-
           </div>
+
+          {/* Footer Actions Strip */}
+          <div className="p-5 sm:p-6 border-t border-black/[0.08] dark:border-white/[0.08] bg-white dark:bg-[#161617] flex items-center justify-between">
+            <a
+              href={item.verifyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="apple-btn-primary text-xs py-2 px-5 inline-flex items-center gap-2"
+            >
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>Verify Official Credential</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+
+            <button
+              onClick={onClose}
+              className="text-xs text-neutral-600 dark:text-[#86868b] hover:text-neutral-900 dark:hover:text-white transition-colors"
+            >
+              Dismiss
+            </button>
+          </div>
+
         </motion.div>
       </div>
     </AnimatePresence>
