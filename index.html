@@ -1,38 +1,1652 @@
-<!doctype html>
-<html lang="en" class="dark scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Primary Meta Tags -->
-    <title>Athul Krishna R | Full Stack Developer</title>
-    <meta name="title" content="Athul Krishna R | Full Stack Developer" />
-    <meta name="description" content="MCA student and Full Stack Developer specializing in MERN stack, AI-powered applications and modern web development." />
-    <meta name="keywords" content="Athul Krishna R, Full Stack Developer, MERN Stack, React, Node.js, MCA, MEA Engineering College, AI, Web Developer Portfolio" />
-    <meta name="author" content="Athul Krishna R" />
-    <meta name="theme-color" content="#000000" />
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athul Krishna R | Full Stack &amp; AI Developer</title>
+  <meta name="description" content="Portfolio of Athul Krishna R — MCA Student @ MEA Engineering College & Full Stack Developer specializing in AI/ML, Computer Vision, ReAct Agents, and MERN/FastAPI systems.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Apple & Google Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Pure Vanilla CSS Design System -->
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://athulkrishna.dev/" />
-    <meta property="og:title" content="Athul Krishna R | Full Stack Developer" />
-    <meta property="og:description" content="MCA student and Full Stack Developer specializing in MERN stack, AI-powered applications and modern web development." />
-    <meta property="og:image" content="/og-preview.svg" />
+  <!-- ========================================================================
+       Apple Frosted Glass Navigation Bar
+       ======================================================================== -->
+  <nav class="apple-nav">
+    <div class="container nav-inner">
+      
+      <!-- Brand Logo / Avatar -->
+      <a href="#about" class="nav-brand" aria-label="Athul Krishna Home">
+        <div class="brand-avatar">AKR</div>
+        <div class="brand-text">
+          <span class="brand-name">Athul Krishna R</span>
+          <span class="brand-sub">MCA @ MEA • Full Stack &amp; AI Developer</span>
+        </div>
+      </a>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Athul Krishna R | Full Stack Developer" />
-    <meta property="twitter:description" content="MCA student and Full Stack Developer specializing in MERN stack, AI-powered applications and modern web development." />
-    <meta property="twitter:image" content="/og-preview.svg" />
+      <!-- Desktop Nav Pill Group -->
+      <div class="nav-pill-group">
+        <a href="#about" class="nav-link active">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#journey" class="nav-link">Journey</a>
+        <a href="#certifications" class="nav-link">Credentials</a>
+      </div>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-black text-[#f5f5f7] antialiased selection:bg-[#0071e3]/30 selection:text-white overflow-x-hidden min-h-screen">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+      <!-- Action CTAs & Theme Toggle -->
+      <div class="nav-actions">
+        <!-- Theme Switcher Button -->
+        <button class="theme-toggle-btn" aria-label="Toggle visual theme">
+          <!-- Populated by script.js -->
+        </button>
+
+        <a href="resume.pdf" download="Athul_Krishna_Resume.pdf" class="apple-btn-primary" style="display:none;" id="desktop-resume-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          <span>Resume</span>
+        </a>
+
+        <!-- Mobile Drawer Hamburger Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer">
+      <div class="mobile-links-grid">
+        <a href="#about" class="mobile-link active">About</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#education" class="mobile-link">Education</a>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#journey" class="mobile-link">Journey</a>
+        <a href="#certifications" class="mobile-link">Credentials</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);">
+        <a href="resume.pdf" download="Athul_Krishna_Resume.pdf" class="apple-btn-primary" style="width:100%;text-align:center;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          <span>Download Resume (PDF)</span>
+        </a>
+        <a href="#contact" class="apple-btn-secondary mobile-link" style="width:100%;text-align:center;">
+          Let's Connect
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    @media (min-width: 640px) {
+      #desktop-resume-btn { display: inline-flex !important; }
+    }
+  </style>
+
+  <!-- ========================================================================
+       Desktop Floating Social Dock (Upper-Left)
+       ======================================================================== -->
+  <aside class="floating-dock" aria-label="Social links">
+    <a href="https://github.com/Athul3588krishna" target="_blank" rel="noopener noreferrer" class="social-circle-btn" title="GitHub Profile">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+    </a>
+    <a href="https://linkedin.com/in/athul-krishna-48a75326b" target="_blank" rel="noopener noreferrer" class="social-circle-btn" title="LinkedIn Profile">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="mailto:athul1296krishna@gmail.com" class="social-circle-btn" title="Direct Email">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+  </aside>
+
+  <!-- ========================================================================
+       1. Hero & Engineering Narrative Section (#about)
+       ======================================================================== -->
+  <section id="about" class="hero-section">
+    <div class="container">
+      
+      <!-- Keynote Typography Headline -->
+      <div style="margin-bottom: 2rem;">
+        <h1 class="hero-title">Athul Krishna R</h1>
+        <p class="hero-subtitle">Full Stack &amp; AI/ML Developer.</p>
+
+        <!-- Mobile / Tablet Quick Social Pills -->
+        <div class="hero-social-row">
+          <a href="https://github.com/Athul3588krishna" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="GitHub">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/athul-krishna-48a75326b" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:athul1296krishna@gmail.com" class="social-circle-btn" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Top Bento Row: Authentic Photo & Narrative -->
+      <div class="hero-bento-grid">
+        
+        <!-- Left: Authentic Avatar Frame -->
+        <div class="apple-card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="avatar-frame">
+            <img src="profile.png" alt="Athul Krishna R Profile Photo">
+            <div class="avatar-status-pill">
+              <span style="display:flex;align-items:center;gap:0.5rem;font-weight:600;">
+                <span class="pulse-dot"></span>
+                <span>MCA Student (2025–27)</span>
+              </span>
+              <span style="color:var(--apple-gray);font-weight:500;">Malappuram, Kerala</span>
+            </div>
+          </div>
+          <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.6;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--apple-border);">
+            <strong style="color:var(--apple-text-strong);">Master of Computer Applications</strong> candidate at MEA Engineering College (KTU) with distinction in B.Sc. Computer Science from KRS Sree Narayana College (Calicut University).
+          </p>
+        </div>
+
+        <!-- Right: Engineering Narrative -->
+        <div class="apple-card" style="padding: 1.75rem 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <span class="section-eyebrow">Engineering Narrative</span>
+            <h2 style="font-size:1.625rem;font-weight:700;color:var(--apple-text-strong);letter-spacing:-0.02em;margin-bottom:1rem;line-height:1.2;">
+              Bridging Computer Vision, Agentic AI &amp; Full-Stack Systems.
+            </h2>
+            <p style="font-size:0.9375rem;color:var(--apple-gray);line-height:1.65;margin-bottom:0.875rem;">
+              I’m an MCA student at <strong style="color:var(--apple-text-strong);">MEA Engineering College, Perinthalmanna</strong> (KTU) with a Bachelor of Science in Computer Science from <strong style="color:var(--apple-text-strong);">KRS Sree Narayana College, Valanchery</strong> (University of Calicut). Over the past four years, my focus has grown from foundational algorithmic theory into building production-ready AI systems and scalable web platforms.
+            </p>
+            <p style="font-size:0.9375rem;color:var(--apple-gray);line-height:1.65;margin-bottom:0.875rem;">
+              My engineering approach is anchored in solving tangible real-world problems. I built <strong style="color:var(--apple-accent);">AgriPulse (AgriMitra 360)</strong>—a multimodal smart agriculture platform integrating PyTorch leaf disease detection, OpenCV HSV lesion severity calculations, ReAct autonomous agents with tool calling, and bilingual Malayalam/English voice interaction.
+            </p>
+            <p style="font-size:0.9375rem;color:var(--apple-gray);line-height:1.65;">
+              My hands-on experience covers Python, FastAPI microservices, React.js, Node.js, Express, MongoDB Atlas, and offline-first desktop systems using Electron.js and SQLite. Certified in MERN Full Stack Development by Illinois Institute of Technology and Entri Elevate, I focus on building reliable, responsive software.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 4 Core Pillars Bento Grid -->
+      <div class="pillars-grid">
+        <div class="apple-card pillar-card">
+          <div class="pillar-icon-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          </div>
+          <h3 style="font-size:0.9375rem;font-weight:700;color:var(--apple-text-strong);">AI, RAG &amp; Agentic Systems</h3>
+          <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.5rem;">
+            Engineered ReAct autonomous agents with multi-tool calling, PyTorch/MobileNet leaf disease scanners, OpenCV HSV analysis, and RAG pipelines integrating KAU/ICAR advisories.
+          </p>
+        </div>
+
+        <div class="apple-card pillar-card">
+          <div class="pillar-icon-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+          </div>
+          <h3 style="font-size:0.9375rem;font-weight:700;color:var(--apple-text-strong);">Modern Backend &amp; Microservices</h3>
+          <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.5rem;">
+            Experienced with Python FastAPI microservices, Node.js/Express REST APIs, Socket.IO bidirectional tracking, and MongoDB Atlas / SQLite databases.
+          </p>
+        </div>
+
+        <div class="apple-card pillar-card">
+          <div class="pillar-icon-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h3 style="font-size:0.9375rem;font-weight:700;color:var(--apple-text-strong);">Reactive &amp; Multimodal Frontends</h3>
+          <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.5rem;">
+            Crafted interactive frontends using React.js, Tailwind CSS, Vite, Web Speech API for bilingual Malayalam/English voice interaction, and Leaflet.js.
+          </p>
+        </div>
+
+        <div class="apple-card pillar-card">
+          <div class="pillar-icon-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="12" x="3" y="4" rx="2"/><line x1="2" x2="22" y1="20" y2="20"/></svg>
+          </div>
+          <h3 style="font-size:0.9375rem;font-weight:700;color:var(--apple-text-strong);">Cross-Platform &amp; Desktop</h3>
+          <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.5rem;">
+            Built offline-first standalone desktop solutions using Electron.js and local SQLite, alongside responsive web applications.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       2. Selected Works & Flagship Projects (#projects)
+       ======================================================================== -->
+  <section id="projects">
+    <div class="container">
+      
+      <div style="max-w:48rem;margin-bottom:3rem;">
+        <span class="section-eyebrow">Selected Works</span>
+        <h2 class="section-title">Crafted with intent.</h2>
+        <p class="section-desc">Flagship platforms spanning computer vision, agentic AI, real-time distributed backends, and offline-first desktop systems.</p>
+      </div>
+
+      <div class="projects-list">
+        
+        <!-- Project 1: AgriPulse -->
+        <article class="apple-card project-card">
+          <div class="project-grid">
+            <div class="project-media-col">
+              <div class="project-media-frame" data-open-project="agripulse">
+                <img src="projects/agripulse.svg" alt="AgriPulse Preview">
+                <div class="project-overlay">
+                  <span class="apple-btn-primary" style="font-size:0.75rem;">Explore Case Study</span>
+                </div>
+                <span class="project-pill-tag">AI &amp; Agentic Systems</span>
+              </div>
+            </div>
+            <div class="project-text-col">
+              <span class="project-eyebrow">Multimodal Smart Agriculture Platform</span>
+              <h3 class="project-heading" data-open-project="agripulse">AgriPulse (AgriMitra 360)</h3>
+              <p class="project-narrative">
+                An AI-powered agricultural platform combining computer vision for leaf disease diagnostics, RAG-based agronomic advisory, a custom ReAct agent with multi-tool calling, and bilingual Malayalam/English voice interaction.
+              </p>
+              <div class="project-stats-grid">
+                <div>
+                  <span class="stat-value">PyTorch CNN</span>
+                  <span class="stat-label">Vision Classifier</span>
+                </div>
+                <div>
+                  <span class="stat-value">ReAct Multi-Tool</span>
+                  <span class="stat-label">Agent Pattern</span>
+                </div>
+                <div>
+                  <span class="stat-value">Malayalam + EN</span>
+                  <span class="stat-label">Voice Support</span>
+                </div>
+              </div>
+              <div class="project-tech-badges">
+                <span class="apple-tag">Python</span>
+                <span class="apple-tag">FastAPI</span>
+                <span class="apple-tag">PyTorch</span>
+                <span class="apple-tag">OpenCV</span>
+                <span class="apple-tag">ReAct Agent</span>
+                <span class="apple-tag">MongoDB Atlas</span>
+              </div>
+              <div class="project-actions">
+                <button class="apple-btn-primary" data-open-project="agripulse">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                  <span>Case Study</span>
+                </button>
+                <a href="https://agripulse-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="apple-btn-secondary">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/Athul3588krishna/agripulse-agrimitra360" target="_blank" rel="noopener noreferrer" class="social-circle-btn" style="margin-left:auto;" title="GitHub Repository">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Ey Auto -->
+        <article class="apple-card project-card">
+          <div class="project-grid reverse">
+            <div class="project-media-col">
+              <div class="project-media-frame" data-open-project="eyauto">
+                <img src="projects/ey-auto.svg" alt="Ey Auto Preview">
+                <div class="project-overlay">
+                  <span class="apple-btn-primary" style="font-size:0.75rem;">Explore Case Study</span>
+                </div>
+                <span class="project-pill-tag">Full Stack &amp; Realtime</span>
+              </div>
+            </div>
+            <div class="project-text-col">
+              <span class="project-eyebrow">B.Sc. Final Year Project</span>
+              <h3 class="project-heading" data-open-project="eyauto">Ey Auto</h3>
+              <p class="project-narrative">
+                A comprehensive ride-booking and fleet coordination platform engineered for regional auto-rickshaw transit. Features dedicated portals for Passengers, Drivers, and Municipal Admins with live Socket.IO dispatching.
+              </p>
+              <div class="project-stats-grid">
+                <div>
+                  <span class="stat-value">3 Modules</span>
+                  <span class="stat-label">Architecture</span>
+                </div>
+                <div>
+                  <span class="stat-value">Socket.IO</span>
+                  <span class="stat-label">Realtime Sync</span>
+                </div>
+                <div>
+                  <span class="stat-value">RBAC Security</span>
+                  <span class="stat-label">Auth Guard</span>
+                </div>
+              </div>
+              <div class="project-tech-badges">
+                <span class="apple-tag">React.js</span>
+                <span class="apple-tag">Node.js</span>
+                <span class="apple-tag">Express.js</span>
+                <span class="apple-tag">MongoDB</span>
+                <span class="apple-tag">Socket.IO</span>
+                <span class="apple-tag">JWT</span>
+              </div>
+              <div class="project-actions">
+                <button class="apple-btn-primary" data-open-project="eyauto">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                  <span>Case Study</span>
+                </button>
+                <a href="https://ey-auto-preview.vercel.app" target="_blank" rel="noopener noreferrer" class="apple-btn-secondary">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/Athul3588krishna/ey-auto" target="_blank" rel="noopener noreferrer" class="social-circle-btn" style="margin-left:auto;" title="GitHub Repository">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: POS Management System -->
+        <article class="apple-card project-card">
+          <div class="project-grid">
+            <div class="project-media-col">
+              <div class="project-media-frame" data-open-project="pos">
+                <img src="projects/pos-system.svg" alt="POS System Preview">
+                <div class="project-overlay">
+                  <span class="apple-btn-primary" style="font-size:0.75rem;">Explore Case Study</span>
+                </div>
+                <span class="project-pill-tag">Desktop &amp; Offline-First</span>
+              </div>
+            </div>
+            <div class="project-text-col">
+              <span class="project-eyebrow">Standalone Desktop Architecture</span>
+              <h3 class="project-heading" data-open-project="pos">POS Management System</h3>
+              <p class="project-narrative">
+                A standalone cross-platform desktop POS application engineered for retail store management. Combines dynamic barcode billing, inventory replenishment tracking, and sales analytics with local SQLite storage for uninterrupted offline reliability.
+              </p>
+              <div class="project-stats-grid">
+                <div>
+                  <span class="stat-value">Electron + Node</span>
+                  <span class="stat-label">Runtime</span>
+                </div>
+                <div>
+                  <span class="stat-value">SQLite ACID</span>
+                  <span class="stat-label">Storage</span>
+                </div>
+                <div>
+                  <span class="stat-value">100% Reliable</span>
+                  <span class="stat-label">Offline First</span>
+                </div>
+              </div>
+              <div class="project-tech-badges">
+                <span class="apple-tag">Electron.js</span>
+                <span class="apple-tag">React.js</span>
+                <span class="apple-tag">Node.js</span>
+                <span class="apple-tag">SQLite</span>
+                <span class="apple-tag">Tailwind CSS</span>
+              </div>
+              <div class="project-actions">
+                <button class="apple-btn-primary" data-open-project="pos">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                  <span>Case Study</span>
+                </button>
+                <a href="https://github.com/Athul3588krishna/pos-management-system" target="_blank" rel="noopener noreferrer" class="apple-btn-secondary">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  <span>Repository</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: EcoClean -->
+        <article class="apple-card project-card">
+          <div class="project-grid reverse">
+            <div class="project-media-col">
+              <div class="project-media-frame" data-open-project="ecoclean">
+                <img src="projects/ecoclean.svg" alt="EcoClean Preview">
+                <div class="project-overlay">
+                  <span class="apple-btn-primary" style="font-size:0.75rem;">Explore Case Study</span>
+                </div>
+                <span class="project-pill-tag">AI &amp; Full Stack</span>
+              </div>
+            </div>
+            <div class="project-text-col">
+              <span class="project-eyebrow">Smart Waste Management Portal</span>
+              <h3 class="project-heading" data-open-project="ecoclean">EcoClean</h3>
+              <p class="project-narrative">
+                An AI-powered smart waste reporting portal enabling citizens to report waste dumps using photo capture and location-based mapping, with automated Gemini Vision classification and municipal resolution tracking.
+              </p>
+              <div class="project-stats-grid">
+                <div>
+                  <span class="stat-value">Gemini Vision</span>
+                  <span class="stat-label">AI Classifier</span>
+                </div>
+                <div>
+                  <span class="stat-value">Leaflet.js</span>
+                  <span class="stat-label">GIS Mapping</span>
+                </div>
+                <div>
+                  <span class="stat-value">Eco-Points</span>
+                  <span class="stat-label">Civic Reward</span>
+                </div>
+              </div>
+              <div class="project-tech-badges">
+                <span class="apple-tag">MERN Stack</span>
+                <span class="apple-tag">Gemini Vision</span>
+                <span class="apple-tag">Leaflet.js</span>
+                <span class="apple-tag">MongoDB</span>
+                <span class="apple-tag">Node.js</span>
+              </div>
+              <div class="project-actions">
+                <button class="apple-btn-primary" data-open-project="ecoclean">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                  <span>Case Study</span>
+                </button>
+                <a href="https://ecoclean-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="apple-btn-secondary">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/Athul3588krishna/ecoclean" target="_blank" rel="noopener noreferrer" class="social-circle-btn" style="margin-left:auto;" title="GitHub Repository">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       3. Formative Education (#education)
+       ======================================================================== -->
+  <section id="education">
+    <div class="container">
+      
+      <div style="max-w:48rem;margin-bottom:3rem;">
+        <span class="section-eyebrow">Academic Credentials</span>
+        <h2 class="section-title">Formative education.</h2>
+        <p class="section-desc">Theoretical foundations in computational algorithms transitioning into postgraduate software engineering.</p>
+      </div>
+
+      <div class="education-grid">
+        
+        <!-- Degree 1: MCA -->
+        <div class="apple-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+              <span class="apple-tag">Postgraduate Degree</span>
+              <span style="font-size:0.75rem;color:var(--apple-gray);font-weight:600;">2025 – 2027</span>
+            </div>
+            <h3 style="font-size:1.375rem;font-weight:700;color:var(--apple-text-strong);letter-spacing:-0.02em;">
+              Master of Computer Applications (MCA)
+            </h3>
+            <p style="font-size:0.875rem;color:var(--apple-gray);margin-top:0.375rem;">
+              <strong style="color:var(--apple-text-strong);">MEA Engineering College</strong> • APJ Abdul Kalam Technological University (KTU)
+            </p>
+            <p style="font-size:0.75rem;color:var(--apple-gray);margin-top:0.25rem;">
+              Perinthalmanna, Kerala
+            </p>
+            <p style="font-size:0.875rem;color:var(--apple-gray);line-height:1.6;margin-top:1rem;">
+              Currently pursuing MCA with deep immersion in AI/ML architectures, PyTorch pipelines, RAG agentic systems, enterprise full-stack development, and distributed computing.
+            </p>
+            <ul style="list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:0.5rem;">
+              <li style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.8125rem;color:var(--apple-gray);">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--apple-accent)" stroke-width="2.5" style="margin-top:2px;flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Engineered AgriPulse multimodal AI platform combining PyTorch, ReAct, and Malayalam voice.</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.8125rem;color:var(--apple-gray);">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--apple-accent)" stroke-width="2.5" style="margin-top:2px;flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Active participant in collegiate hackathons, symposiums, and AI software engineering.</span>
+              </li>
+            </ul>
+          </div>
+          <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--apple-border);">
+            <span style="font-size:0.6875rem;font-weight:700;text-transform:uppercase;color:var(--apple-gray);display:block;margin-bottom:0.5rem;">Key Coursework:</span>
+            <div style="display:flex;flex-wrap:wrap;gap:0.375rem;">
+              <span class="apple-tag">AI &amp; Machine Learning</span>
+              <span class="apple-tag">Advanced Data Structures</span>
+              <span class="apple-tag">Full Stack Development</span>
+              <span class="apple-tag">Distributed Databases</span>
+              <span class="apple-tag">Computer Vision</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Degree 2: B.Sc. CS -->
+        <div class="apple-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+              <span class="apple-tag">Undergraduate Degree</span>
+              <span style="font-size:0.75rem;color:var(--apple-gray);font-weight:600;">2022 – 2025</span>
+            </div>
+            <h3 style="font-size:1.375rem;font-weight:700;color:var(--apple-text-strong);letter-spacing:-0.02em;">
+              Bachelor of Science in Computer Science
+            </h3>
+            <p style="font-size:0.875rem;color:var(--apple-gray);margin-top:0.375rem;">
+              <strong style="color:var(--apple-text-strong);">KRS Sree Narayana College</strong> • University of Calicut
+            </p>
+            <p style="font-size:0.75rem;color:var(--apple-gray);margin-top:0.25rem;">
+              Valanchery, Kerala
+            </p>
+            <p style="font-size:0.875rem;color:var(--apple-gray);line-height:1.6;margin-top:1rem;">
+              Built strong theoretical foundations in computational theory, software design, object-oriented programming, and relational database systems.
+            </p>
+            <ul style="list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:0.5rem;">
+              <li style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.8125rem;color:var(--apple-gray);">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--apple-accent)" stroke-width="2.5" style="margin-top:2px;flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Built 'Ey Auto' (Auto-Rickshaw Ride-Booking Platform) as B.Sc. Final Year Capstone Project.</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.8125rem;color:var(--apple-gray);">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--apple-accent)" stroke-width="2.5" style="margin-top:2px;flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Earned undergraduate degree with distinction across core computer labs and algorithms.</span>
+              </li>
+            </ul>
+          </div>
+          <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--apple-border);">
+            <span style="font-size:0.6875rem;font-weight:700;text-transform:uppercase;color:var(--apple-gray);display:block;margin-bottom:0.5rem;">Key Coursework:</span>
+            <div style="display:flex;flex-wrap:wrap;gap:0.375rem;">
+              <span class="apple-tag">Python &amp; C Programming</span>
+              <span class="apple-tag">Database Management (SQL)</span>
+              <span class="apple-tag">Networks &amp; OS</span>
+              <span class="apple-tag">Software Engineering</span>
+              <span class="apple-tag">Algorithmic Complexity</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. Skills & Technologies (#skills)
+       ======================================================================== -->
+  <section id="skills">
+    <div class="container">
+      
+      <div style="max-w:48rem;margin-bottom:2.5rem;">
+        <span class="section-eyebrow">Technical Competencies</span>
+        <h2 class="section-title">Skills &amp; Technologies.</h2>
+        <p class="section-desc">Hands-on proficiency across modern AI frameworks, computer vision, full-stack backends, and databases.</p>
+      </div>
+
+      <!-- Segmented Category Filter Bar -->
+      <div class="segmented-filter-bar scrollbar-none touch-scroll">
+        <button class="filter-btn active" data-skill-filter="all">All Technologies</button>
+        <button class="filter-btn" data-skill-filter="programming-ai">Programming &amp; AI</button>
+        <button class="filter-btn" data-skill-filter="ai-automation">AI &amp; Automation</button>
+        <button class="filter-btn" data-skill-filter="backend-apis">Backend &amp; APIs</button>
+        <button class="filter-btn" data-skill-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-skill-filter="databases">Databases</button>
+      </div>
+
+      <!-- Skills Tiles Grid -->
+      <div class="skills-grid">
+        
+        <!-- Python -->
+        <div class="apple-card skill-tile" data-category="programming-ai">
+          <div class="skill-icon-wrap" style="color:#3776AB;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Python</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">Core Language</div>
+          </div>
+        </div>
+
+        <!-- PyTorch -->
+        <div class="apple-card skill-tile" data-category="programming-ai">
+          <div class="skill-icon-wrap" style="color:#EE4C2C;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">PyTorch</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">Applied AI/ML</div>
+          </div>
+        </div>
+
+        <!-- OpenCV -->
+        <div class="apple-card skill-tile" data-category="programming-ai">
+          <div class="skill-icon-wrap" style="color:#5C3EE8;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">OpenCV</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">Computer Vision</div>
+          </div>
+        </div>
+
+        <!-- MobileNet -->
+        <div class="apple-card skill-tile" data-category="programming-ai">
+          <div class="skill-icon-wrap" style="color:#00C49F;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">MobileNet</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">Edge AI / CNN</div>
+          </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="apple-card skill-tile" data-category="programming-ai">
+          <div class="skill-icon-wrap" style="color:#F7DF1E;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">JavaScript</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">ES6+ Standard</div>
+          </div>
+        </div>
+
+        <!-- RAG -->
+        <div class="apple-card skill-tile" data-category="ai-automation">
+          <div class="skill-icon-wrap" style="color:#A855F7;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">RAG Pipelines</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">Vector Search</div>
+          </div>
+        </div>
+
+        <!-- ReAct Agent -->
+        <div class="apple-card skill-tile" data-category="ai-automation">
+          <div class="skill-icon-wrap" style="color:#8B5CF6;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">ReAct Agentic AI</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">Autonomous Loops</div>
+          </div>
+        </div>
+
+        <!-- Tool Calling -->
+        <div class="apple-card skill-tile" data-category="ai-automation">
+          <div class="skill-icon-wrap" style="color:#38BDF8;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Tool Calling</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">API Function Calling</div>
+          </div>
+        </div>
+
+        <!-- FastAPI -->
+        <div class="apple-card skill-tile" data-category="backend-apis">
+          <div class="skill-icon-wrap" style="color:#059669;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FastAPI</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">Python Microservice</div>
+          </div>
+        </div>
+
+        <!-- Node.js -->
+        <div class="apple-card skill-tile" data-category="backend-apis">
+          <div class="skill-icon-wrap" style="color:#339933;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Node.js</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">Event-Driven</div>
+          </div>
+        </div>
+
+        <!-- Express.js -->
+        <div class="apple-card skill-tile" data-category="backend-apis">
+          <div class="skill-icon-wrap" style="color:#68A063;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Express.js</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">RESTful Routing</div>
+          </div>
+        </div>
+
+        <!-- Socket.IO -->
+        <div class="apple-card skill-tile" data-category="backend-apis">
+          <div class="skill-icon-wrap" style="color:#010101;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Socket.IO</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">Bidirectional Sync</div>
+          </div>
+        </div>
+
+        <!-- React.js -->
+        <div class="apple-card skill-tile" data-category="frontend">
+          <div class="skill-icon-wrap" style="color:#61DAFB;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">React.js</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">Component UI</div>
+          </div>
+        </div>
+
+        <!-- MongoDB -->
+        <div class="apple-card skill-tile" data-category="databases">
+          <div class="skill-icon-wrap" style="color:#47A248;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">MongoDB Atlas</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">Cloud NoSQL</div>
+          </div>
+        </div>
+
+        <!-- SQLite -->
+        <div class="apple-card skill-tile" data-category="databases">
+          <div class="skill-icon-wrap" style="color:#003B57;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <div style="min-width:0;">
+            <div style="font-size:0.875rem;font-weight:700;color:var(--apple-text-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">SQLite</div>
+            <div style="font-size:0.6875rem;color:var(--apple-gray);">Offline Relational</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. Engineering Progression (#journey)
+       ======================================================================== -->
+  <section id="journey">
+    <div class="container">
+      
+      <div style="max-w:48rem;margin-bottom:3rem;">
+        <span class="section-eyebrow">Engineering Progression</span>
+        <h2 class="section-title">Journey so far.</h2>
+        <p class="section-desc">Key milestones from undergraduate computer science foundations to postgraduate AI innovation and production engineering.</p>
+      </div>
+
+      <div class="timeline-wrap">
+        <!-- Background Track -->
+        <div class="timeline-track"></div>
+        <!-- Dynamic Scroll Progress Fill (controlled by script.js) -->
+        <div class="timeline-progress-fill"></div>
+
+        <div class="timeline-items">
+          
+          <!-- Milestone 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+            <div class="apple-card" style="padding:1.5rem 1.75rem;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem;margin-bottom:0.5rem;">
+                <span class="apple-tag" style="color:var(--apple-accent);font-weight:700;">2022</span>
+                <span style="font-size:0.6875rem;color:#30d158;font-weight:600;">Completed</span>
+              </div>
+              <h3 style="font-size:1.125rem;font-weight:700;color:var(--apple-text-strong);">B.Sc. Computer Science Journey Begins</h3>
+              <p style="font-size:0.8125rem;font-weight:600;color:var(--apple-text);margin-top:0.25rem;">
+                Enrolled at KRS Sree Narayana College, Valanchery under University of Calicut.
+              </p>
+              <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.375rem;">
+                Began rigorous computer science foundations covering Python, C programming, object-oriented concepts, relational databases (SQL), data structures, algorithms, and computational theory.
+              </p>
+              <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);font-size:0.75rem;color:var(--apple-text-strong);">
+                <strong style="color:var(--apple-accent);">Highlight:</strong> Developed solid analytical foundations in core computing and algorithmic logic.
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+            <div class="apple-card" style="padding:1.5rem 1.75rem;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem;margin-bottom:0.5rem;">
+                <span class="apple-tag" style="color:var(--apple-accent);font-weight:700;">2024 – 2025</span>
+                <span style="font-size:0.6875rem;color:#30d158;font-weight:600;">Completed</span>
+              </div>
+              <h3 style="font-size:1.125rem;font-weight:700;color:var(--apple-text-strong);">8-Month Intensive Full Stack Immersion</h3>
+              <p style="font-size:0.8125rem;font-weight:600;color:var(--apple-text);margin-top:0.25rem;">
+                Certified User by Illinois Institute of Technology &amp; Entri Elevate.
+              </p>
+              <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.375rem;">
+                Completed an intensive 8-month full stack engineering program focusing on modern web standards, the MERN ecosystem (React, Node.js, Express, MongoDB Atlas), and cloud database architectures.
+              </p>
+              <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);font-size:0.75rem;color:var(--apple-text-strong);">
+                <strong style="color:var(--apple-accent);">Highlight:</strong> Earned Certified User credential from Illinois Institute of Technology &amp; Entri Elevate.
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+            <div class="apple-card" style="padding:1.5rem 1.75rem;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem;margin-bottom:0.5rem;">
+                <span class="apple-tag" style="color:var(--apple-accent);font-weight:700;">2025</span>
+                <span style="font-size:0.6875rem;color:#30d158;font-weight:600;">Completed</span>
+              </div>
+              <h3 style="font-size:1.125rem;font-weight:700;color:var(--apple-text-strong);">Graduated B.Sc. Computer Science &amp; Built Ey Auto</h3>
+              <p style="font-size:0.8125rem;font-weight:600;color:var(--apple-text);margin-top:0.25rem;">
+                Engineered Ey Auto – Auto Rickshaw Booking Platform as Final Year Project.
+              </p>
+              <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.375rem;">
+                Graduated with distinction from KRS Sree Narayana College, Valanchery. Built 'Ey Auto', a full-stack ride-booking platform with dedicated Passenger, Driver, and Admin modules utilizing Socket.IO for real-time tracking.
+              </p>
+              <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);font-size:0.75rem;color:var(--apple-text-strong);">
+                <strong style="color:var(--apple-accent);">Highlight:</strong> Delivered comprehensive 3-module ride hailing system with real-time WebSockets.
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+            <div class="apple-card" style="padding:1.5rem 1.75rem;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem;margin-bottom:0.5rem;">
+                <span class="apple-tag" style="color:var(--apple-accent);font-weight:700;">2025</span>
+                <span style="font-size:0.6875rem;color:#2997ff;font-weight:600;">In Progress</span>
+              </div>
+              <h3 style="font-size:1.125rem;font-weight:700;color:var(--apple-text-strong);">Enrolled in MCA at MEA Engineering College</h3>
+              <p style="font-size:0.8125rem;font-weight:600;color:var(--apple-text);margin-top:0.25rem;">
+                Commenced Master of Computer Applications at MEA Engineering College, Perinthalmanna (KTU).
+              </p>
+              <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.375rem;">
+                Advanced into postgraduate software engineering focusing on machine learning, deep learning architectures, advanced distributed systems, cloud computing, and AI-assisted automation.
+              </p>
+              <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);font-size:0.75rem;color:var(--apple-text-strong);">
+                <strong style="color:var(--apple-accent);">Highlight:</strong> Deepening theoretical and practical mastery of AI models and scalable systems.
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone 5 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+            <div class="apple-card" style="padding:1.5rem 1.75rem;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem;margin-bottom:0.5rem;">
+                <span class="apple-tag" style="color:var(--apple-accent);font-weight:700;">2025</span>
+                <span style="font-size:0.6875rem;color:#30d158;font-weight:600;">Completed</span>
+              </div>
+              <h3 style="font-size:1.125rem;font-weight:700;color:var(--apple-text-strong);">Built POS Management System Desktop Application</h3>
+              <p style="font-size:0.8125rem;font-weight:600;color:var(--apple-text);margin-top:0.25rem;">
+                Engineered offline-first retail POS software using Electron.js and SQLite.
+              </p>
+              <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.375rem;">
+                Architected a standalone desktop POS solution with fast billing, inventory tracking, dynamic reporting, and local SQLite database storage for reliable data handling without cloud dependency.
+              </p>
+              <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);font-size:0.75rem;color:var(--apple-text-strong);">
+                <strong style="color:var(--apple-accent);">Highlight:</strong> Created zero-latency offline billing system with local relational ACID storage.
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone 6 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+            <div class="apple-card" style="padding:1.5rem 1.75rem;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem;margin-bottom:0.5rem;">
+                <span class="apple-tag" style="color:var(--apple-accent);font-weight:700;">2026</span>
+                <span style="font-size:0.6875rem;color:#30d158;font-weight:600;">Completed</span>
+              </div>
+              <h3 style="font-size:1.125rem;font-weight:700;color:var(--apple-text-strong);">Engineered EcoClean AI Smart Waste Portal</h3>
+              <p style="font-size:0.8125rem;font-weight:600;color:var(--apple-text);margin-top:0.25rem;">
+                Integrated Google Gemini Vision AI and Leaflet GIS mapping.
+              </p>
+              <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.375rem;">
+                Built an AI-powered waste reporting platform that enables citizens to report waste using photos and GPS location, with Gemini Vision AI classifying waste categories and Leaflet.js managing municipal complaints.
+              </p>
+              <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);font-size:0.75rem;color:var(--apple-text-strong);">
+                <strong style="color:var(--apple-accent);">Highlight:</strong> Applied multimodal computer vision for automated civic grievance handling.
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone 7 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+            <div class="apple-card" style="padding:1.5rem 1.75rem;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem;margin-bottom:0.5rem;">
+                <span class="apple-tag" style="color:var(--apple-accent);font-weight:700;">2026</span>
+                <span style="font-size:0.6875rem;color:#ff9f0a;font-weight:600;">Flagship Project</span>
+              </div>
+              <h3 style="font-size:1.125rem;font-weight:700;color:var(--apple-text-strong);">Pioneered AgriPulse (AgriMitra 360) Multimodal Platform</h3>
+              <p style="font-size:0.8125rem;font-weight:600;color:var(--apple-text);margin-top:0.25rem;">
+                Combining PyTorch, MobileNet, OpenCV, RAG, ReAct Agent, and Malayalam Voice Interaction.
+              </p>
+              <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.375rem;">
+                Engineered AgriPulse (AgriMitra 360), a breakthrough agriculture platform featuring a PyTorch/MobileNet crop disease scanner, OpenCV HSV lesion severity analysis, a ReAct agent with multi-tool calling for mandi prices and spray safety, and bilingual Malayalam/English voice interaction.
+              </p>
+              <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);font-size:0.75rem;color:var(--apple-text-strong);">
+                <strong style="color:var(--apple-accent);">Highlight:</strong> Integrated computer vision, RAG, tool calling, and Malayalam voice interaction in one unified system.
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone 8 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+            <div class="apple-card" style="padding:1.5rem 1.75rem;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem;margin-bottom:0.5rem;">
+                <span class="apple-tag" style="color:var(--apple-accent);font-weight:700;">Sept 2026</span>
+                <span style="font-size:0.6875rem;color:#f59e0b;font-weight:600;">Hackathon</span>
+              </div>
+              <h3 style="font-size:1.125rem;font-weight:700;color:var(--apple-text-strong);">AI Conclave Hackathon — Amal Jyothi College of Engineering</h3>
+              <p style="font-size:0.8125rem;font-weight:600;color:var(--apple-text);margin-top:0.25rem;">
+                Competed with agriculture AI platform &amp; Telegram chatbot eliminating middleman expenses.
+              </p>
+              <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.375rem;">
+                Competed at Amal Jyothi College of Engineering, Kottayam, developing an agriculture-focused AI web platform with an integrated Telegram chatbot designed to eliminate middleman expenses and empower farmers with direct market connectivity.
+              </p>
+              <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);font-size:0.75rem;color:var(--apple-text-strong);">
+                <strong style="color:var(--apple-accent);">Highlight:</strong> Demonstrated direct market connectivity and Telegram chatbot for grassroots farmers.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. Verified Credentials (#certifications)
+       ======================================================================== -->
+  <section id="certifications">
+    <div class="container">
+      
+      <div style="max-w:48rem;margin-bottom:2.5rem;">
+        <span class="section-eyebrow">Accreditations &amp; Degrees</span>
+        <h2 class="section-title">Verified credentials.</h2>
+        <p class="section-desc">Accredited credentials across full-stack MERN engineering, multimodal AI, and academic degrees with verified visual previews.</p>
+      </div>
+
+      <!-- Segmented Category Filter Bar -->
+      <div class="segmented-filter-bar scrollbar-none touch-scroll">
+        <button class="filter-btn active" data-cert-filter="all">All Credentials</button>
+        <button class="filter-btn" data-cert-filter="fullstack">Full Stack (MERN)</button>
+        <button class="filter-btn" data-cert-filter="ai">AI &amp; Multimodal</button>
+        <button class="filter-btn" data-cert-filter="education">Academic Degrees</button>
+      </div>
+
+      <!-- Credentials Cards Grid with Visual SVG Previews -->
+      <div class="certs-grid">
+        
+        <!-- Cert 1: Illinois Tech -->
+        <article class="apple-card cert-card" data-category="fullstack"
+          data-title="Full Stack Development (MERN) – Certified User"
+          data-issuer="Illinois Institute of Technology &amp; Entri Elevate"
+          data-image="certificates/cert-illinois.svg"
+          data-id="IIT-ENTRI-MERN-2025-AKR"
+          data-highlight="Jointly certified by Illinois Institute of Technology and Entri Elevate."
+          data-verify="https://elevate.entri.app/verification"
+          style="padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div class="cert-preview-frame" data-open-cert>
+              <img src="certificates/cert-illinois.svg" alt="Illinois Tech Certificate Preview">
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:var(--apple-gray);margin-bottom:0.5rem;">
+              <span style="font-weight:600;color:var(--apple-accent);">Verified Credential</span>
+              <span>2025</span>
+            </div>
+            <h3 style="font-size:1rem;font-weight:700;color:var(--apple-text-strong);cursor:pointer;" data-open-cert>
+              Full Stack Development (MERN) – Certified User
+            </h3>
+            <p style="font-size:0.75rem;color:var(--apple-gray);margin-top:0.25rem;">
+              Illinois Institute of Technology &amp; Entri Elevate
+            </p>
+            <p style="font-size:0.75rem;color:var(--apple-gray);line-height:1.5;margin-top:0.5rem;">
+              International institutional accreditation certifying comprehensive mastery in full-stack MERN engineering, cloud databases, and software craftsmanship.
+            </p>
+          </div>
+          <div style="margin-top:1.25rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);display:flex;align-items:center;justify-content:space-between;">
+            <button class="apple-btn-secondary" style="font-size:0.75rem;padding:0.375rem 0.875rem;" data-open-cert>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>Inspect</span>
+            </button>
+            <a href="https://elevate.entri.app/verification" target="_blank" rel="noopener noreferrer" style="font-size:0.75rem;color:var(--apple-accent);font-weight:600;display:inline-flex;align-items:center;gap:0.25rem;">
+              <span>Verify</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Cert 2: Entri Capstone -->
+        <article class="apple-card cert-card" data-category="fullstack"
+          data-title="Full Stack Web Development (MERN) with Capstone Project"
+          data-issuer="Entri Elevate"
+          data-image="certificates/cert-mern.svg"
+          data-id="ENTRI-CAPSTONE-MERN-88219"
+          data-highlight="Graduated with capstone project distinction."
+          data-verify="https://elevate.entri.app/verification"
+          style="padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div class="cert-preview-frame" data-open-cert>
+              <img src="certificates/cert-mern.svg" alt="MERN Capstone Certificate Preview">
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:var(--apple-gray);margin-bottom:0.5rem;">
+              <span style="font-weight:600;color:var(--apple-accent);">Verified Credential</span>
+              <span>2025</span>
+            </div>
+            <h3 style="font-size:1rem;font-weight:700;color:var(--apple-text-strong);cursor:pointer;" data-open-cert>
+              Full Stack Web Development (MERN) Capstone
+            </h3>
+            <p style="font-size:0.75rem;color:var(--apple-gray);margin-top:0.25rem;">
+              Entri Elevate
+            </p>
+            <p style="font-size:0.75rem;color:var(--apple-gray);line-height:1.5;margin-top:0.5rem;">
+              Awarded upon successful defense and delivery of end-to-end full stack capstone platforms with real-time features.
+            </p>
+          </div>
+          <div style="margin-top:1.25rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);display:flex;align-items:center;justify-content:space-between;">
+            <button class="apple-btn-secondary" style="font-size:0.75rem;padding:0.375rem 0.875rem;" data-open-cert>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>Inspect</span>
+            </button>
+            <a href="https://elevate.entri.app/verification" target="_blank" rel="noopener noreferrer" style="font-size:0.75rem;color:var(--apple-accent);font-weight:600;display:inline-flex;align-items:center;gap:0.25rem;">
+              <span>Verify</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Cert 3: 8-Month Intensive -->
+        <article class="apple-card cert-card" data-category="fullstack"
+          data-title="8-Month Intensive Full Stack Development Program"
+          data-issuer="Entri Elevate Engineering Academy"
+          data-image="certificates/cert-intensive.svg"
+          data-id="ENTRI-8M-FS-INTENSIVE"
+          data-highlight="Built and deployed multiple end-to-end applications spanning web and desktop."
+          data-verify="https://elevate.entri.app"
+          style="padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div class="cert-preview-frame" data-open-cert>
+              <img src="certificates/cert-intensive.svg" alt="8-Month Intensive Certificate Preview">
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:var(--apple-gray);margin-bottom:0.5rem;">
+              <span style="font-weight:600;color:var(--apple-accent);">Verified Credential</span>
+              <span>2025</span>
+            </div>
+            <h3 style="font-size:1rem;font-weight:700;color:var(--apple-text-strong);cursor:pointer;" data-open-cert>
+              8-Month Intensive Full Stack Immersion
+            </h3>
+            <p style="font-size:0.75rem;color:var(--apple-gray);margin-top:0.25rem;">
+              Entri Elevate Engineering Academy
+            </p>
+            <p style="font-size:0.75rem;color:var(--apple-gray);line-height:1.5;margin-top:0.5rem;">
+              Rigorous 8-month full-time immersion covering contemporary software engineering, desktop environments, and cloud integrations.
+            </p>
+          </div>
+          <div style="margin-top:1.25rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);display:flex;align-items:center;justify-content:space-between;">
+            <button class="apple-btn-secondary" style="font-size:0.75rem;padding:0.375rem 0.875rem;" data-open-cert>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>Inspect</span>
+            </button>
+            <a href="https://elevate.entri.app" target="_blank" rel="noopener noreferrer" style="font-size:0.75rem;color:var(--apple-accent);font-weight:600;display:inline-flex;align-items:center;gap:0.25rem;">
+              <span>Verify</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Cert 4: PyTorch & AI -->
+        <article class="apple-card cert-card" data-category="ai"
+          data-title="PyTorch, Computer Vision &amp; Multimodal Agentic Systems"
+          data-issuer="Applied AI / Deep Learning Specialization"
+          data-image="certificates/cert-ai.svg"
+          data-id="AI-PYTORCH-RAG-2026"
+          data-highlight="Applied directly to build the AgriPulse (AgriMitra 360) platform."
+          data-verify="https://github.com/Athul3588krishna/agripulse-agrimitra360"
+          style="padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div class="cert-preview-frame" data-open-cert>
+              <img src="certificates/cert-ai.svg" alt="PyTorch &amp; AI Certificate Preview">
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:var(--apple-gray);margin-bottom:0.5rem;">
+              <span style="font-weight:600;color:var(--apple-accent);">Specialization</span>
+              <span>2026</span>
+            </div>
+            <h3 style="font-size:1rem;font-weight:700;color:var(--apple-text-strong);cursor:pointer;" data-open-cert>
+              PyTorch, Vision &amp; Agentic AI
+            </h3>
+            <p style="font-size:0.75rem;color:var(--apple-gray);margin-top:0.25rem;">
+              Applied AI Specialization
+            </p>
+            <p style="font-size:0.75rem;color:var(--apple-gray);line-height:1.5;margin-top:0.5rem;">
+              Training convolutional networks, HSV lesion analysis in OpenCV, ReAct agents with tool calling, and RAG knowledge indexing.
+            </p>
+          </div>
+          <div style="margin-top:1.25rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);display:flex;align-items:center;justify-content:space-between;">
+            <button class="apple-btn-secondary" style="font-size:0.75rem;padding:0.375rem 0.875rem;" data-open-cert>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>Inspect</span>
+            </button>
+            <a href="https://github.com/Athul3588krishna/agripulse-agrimitra360" target="_blank" rel="noopener noreferrer" style="font-size:0.75rem;color:var(--apple-accent);font-weight:600;display:inline-flex;align-items:center;gap:0.25rem;">
+              <span>Repository</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Cert 5: B.Sc. Degree -->
+        <article class="apple-card cert-card" data-category="education"
+          data-title="Bachelor of Science in Computer Science Degree"
+          data-issuer="University of Calicut (KRS Sree Narayana College)"
+          data-image="certificates/cert-bsc.svg"
+          data-id="UOC-BSC-CS-2025-AKR"
+          data-highlight="Graduated with distinction from KRS Sree Narayana College, Valanchery."
+          data-verify="https://uoc.ac.in"
+          style="padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div class="cert-preview-frame" data-open-cert>
+              <img src="certificates/cert-bsc.svg" alt="B.Sc. Degree Preview">
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:var(--apple-gray);margin-bottom:0.5rem;">
+              <span style="font-weight:600;color:var(--apple-accent);">Degree</span>
+              <span>2025</span>
+            </div>
+            <h3 style="font-size:1rem;font-weight:700;color:var(--apple-text-strong);cursor:pointer;" data-open-cert>
+              B.Sc. Computer Science Degree
+            </h3>
+            <p style="font-size:0.75rem;color:var(--apple-gray);margin-top:0.25rem;">
+              University of Calicut
+            </p>
+            <p style="font-size:0.75rem;color:var(--apple-gray);line-height:1.5;margin-top:0.5rem;">
+              Three-year undergraduate degree conferring rigorous foundations in computational algorithms, systems programming, and database design.
+            </p>
+          </div>
+          <div style="margin-top:1.25rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);display:flex;align-items:center;justify-content:space-between;">
+            <button class="apple-btn-secondary" style="font-size:0.75rem;padding:0.375rem 0.875rem;" data-open-cert>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>Inspect</span>
+            </button>
+            <a href="https://uoc.ac.in" target="_blank" rel="noopener noreferrer" style="font-size:0.75rem;color:var(--apple-accent);font-weight:600;display:inline-flex;align-items:center;gap:0.25rem;">
+              <span>University</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. Recognition & Achievements (#achievements)
+       ======================================================================== -->
+  <section id="achievements">
+    <div class="container">
+      
+      <div style="max-w:48rem;margin-bottom:2.5rem;">
+        <span class="section-eyebrow">Milestones &amp; Honors</span>
+        <h2 class="section-title">Recognition.</h2>
+        <p class="section-desc">Collegiate hackathons, technical symposiums, and engineering capstone milestones.</p>
+      </div>
+
+      <div class="achievements-grid">
+        
+        <div class="apple-card" style="padding:1.75rem;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+              <span class="apple-tag">Hackathon Competitor</span>
+              <span style="font-size:0.75rem;color:var(--apple-gray);font-weight:600;">Sept 16, 2026</span>
+            </div>
+            <h3 style="font-size:1.0625rem;font-weight:700;color:var(--apple-text-strong);">
+              AI Conclave Hackathon — Direct Market Agriculture AI
+            </h3>
+            <p style="font-size:0.75rem;color:var(--apple-accent);font-weight:600;margin-top:0.25rem;">
+              Amal Jyothi College of Engineering, Kottayam
+            </p>
+            <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.75rem;">
+              Developed an agriculture-focused AI platform with an integrated Telegram chatbot designed to eliminate middleman expenses and empower farmers with direct market connectivity.
+            </p>
+          </div>
+          <div style="margin-top:1.25rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--apple-text-strong);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#30d158" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Built real-time market price integration and accessible Telegram chatbot.</span>
+          </div>
+        </div>
+
+        <div class="apple-card" style="padding:1.75rem;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+              <span class="apple-tag">Multimodal AI</span>
+              <span style="font-size:0.75rem;color:var(--apple-gray);font-weight:600;">2026</span>
+            </div>
+            <h3 style="font-size:1.0625rem;font-weight:700;color:var(--apple-text-strong);">
+              Pioneered AgriPulse (AgriMitra 360) Platform
+            </h3>
+            <p style="font-size:0.75rem;color:var(--apple-accent);font-weight:600;margin-top:0.25rem;">
+              Flagship AI Engineering Project
+            </p>
+            <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.75rem;">
+              Conceived and built AgriPulse combining PyTorch/MobileNet leaf disease detection, OpenCV HSV lesion severity analysis, ReAct agent multi-tool calling, and bilingual Malayalam voice.
+            </p>
+          </div>
+          <div style="margin-top:1.25rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--apple-text-strong);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#30d158" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Delivered a practical, real-world AI solution directly empowering local farmers.</span>
+          </div>
+        </div>
+
+        <div class="apple-card" style="padding:1.75rem;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+              <span class="apple-tag">Illinois Tech Certified</span>
+              <span style="font-size:0.75rem;color:var(--apple-gray);font-weight:600;">2025</span>
+            </div>
+            <h3 style="font-size:1.0625rem;font-weight:700;color:var(--apple-text-strong);">
+              Illinois Tech &amp; Entri Elevate Certification
+            </h3>
+            <p style="font-size:0.75rem;color:var(--apple-accent);font-weight:600;margin-top:0.25rem;">
+              International Technical Credential
+            </p>
+            <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.55;margin-top:0.75rem;">
+              Earned Certified User status in Full Stack Development (MERN Stack) jointly issued by Illinois Institute of Technology and Entri Elevate.
+            </p>
+          </div>
+          <div style="margin-top:1.25rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--apple-text-strong);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#30d158" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Rigorous evaluation in modern full stack web standards and cloud databases.</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. Open Source & GitHub Section (#github)
+       ======================================================================== -->
+  <section id="github">
+    <div class="container">
+      
+      <div style="max-w:48rem;margin-bottom:2.5rem;">
+        <span class="section-eyebrow">Open Source</span>
+        <h2 class="section-title">GitHub repositories.</h2>
+        <p class="section-desc">Open-source repositories, architectural prototypes, and full codebase implementations.</p>
+      </div>
+
+      <!-- GitHub Profile Card -->
+      <div class="apple-card github-profile-card">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem;">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <div style="width:3rem;height:3rem;border-radius:9999px;background:var(--apple-text-strong);color:var(--apple-bg);font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;">
+              AKR
+            </div>
+            <div>
+              <div style="display:flex;align-items:center;gap:0.5rem;">
+                <h3 style="font-size:1.125rem;font-weight:700;color:var(--apple-text-strong);">Athul Krishna R</h3>
+                <span style="font-size:0.75rem;color:var(--apple-gray);">@Athul3588krishna</span>
+              </div>
+              <p style="font-size:0.8125rem;color:var(--apple-gray);margin-top:0.25rem;">
+                Full Stack Developer | MCA Student @ MEA Engineering College | MERN &amp; AI Enthusiast
+              </p>
+            </div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1rem;">
+            <a href="https://github.com/Athul3588krishna" target="_blank" rel="noopener noreferrer" class="apple-btn-secondary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              <span>View GitHub Profile</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real Repositories Grid -->
+      <div class="github-repos-grid">
+        
+        <a href="https://github.com/Athul3588krishna/agripulse-agrimitra360" target="_blank" rel="noopener noreferrer" class="apple-card" style="padding:1.25rem;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+              <span style="font-weight:700;font-size:0.9375rem;color:var(--apple-text-strong);display:flex;align-items:center;gap:0.5rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--apple-accent)" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                <span>agripulse-agrimitra360</span>
+              </span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--apple-gray)" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+            <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.5;">
+              Multimodal Smart Agriculture Platform: PyTorch, OpenCV, ReAct Agent &amp; Malayalam Voice.
+            </p>
+          </div>
+          <div style="margin-top:1rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:var(--apple-gray);">
+            <div style="display:flex;align-items:center;gap:0.375rem;">
+              <span style="width:10px;height:10px;border-radius:9999px;background:#3572A5;"></span>
+              <span>Python / React</span>
+            </div>
+            <span style="color:var(--apple-accent);font-weight:600;">Browse Code →</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/Athul3588krishna/ey-auto" target="_blank" rel="noopener noreferrer" class="apple-card" style="padding:1.25rem;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+              <span style="font-weight:700;font-size:0.9375rem;color:var(--apple-text-strong);display:flex;align-items:center;gap:0.5rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--apple-accent)" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                <span>ey-auto</span>
+              </span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--apple-gray)" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+            <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.5;">
+              Real-time auto-rickshaw transit &amp; dispatch platform using MERN and Socket.IO.
+            </p>
+          </div>
+          <div style="margin-top:1rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:var(--apple-gray);">
+            <div style="display:flex;align-items:center;gap:0.375rem;">
+              <span style="width:10px;height:10px;border-radius:9999px;background:#f1e05a;"></span>
+              <span>JavaScript</span>
+            </div>
+            <span style="color:var(--apple-accent);font-weight:600;">Browse Code →</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/Athul3588krishna/pos-management-system" target="_blank" rel="noopener noreferrer" class="apple-card" style="padding:1.25rem;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+              <span style="font-weight:700;font-size:0.9375rem;color:var(--apple-text-strong);display:flex;align-items:center;gap:0.5rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--apple-accent)" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                <span>pos-management-system</span>
+              </span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--apple-gray)" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+            <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.5;">
+              Offline-first standalone desktop retail point-of-sale solution with Electron &amp; SQLite.
+            </p>
+          </div>
+          <div style="margin-top:1rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:var(--apple-gray);">
+            <div style="display:flex;align-items:center;gap:0.375rem;">
+              <span style="width:10px;height:10px;border-radius:9999px;background:#f1e05a;"></span>
+              <span>JavaScript</span>
+            </div>
+            <span style="color:var(--apple-accent);font-weight:600;">Browse Code →</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/Athul3588krishna/ecoclean" target="_blank" rel="noopener noreferrer" class="apple-card" style="padding:1.25rem;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+              <span style="font-weight:700;font-size:0.9375rem;color:var(--apple-text-strong);display:flex;align-items:center;gap:0.5rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--apple-accent)" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                <span>ecoclean</span>
+              </span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--apple-gray)" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+            <p style="font-size:0.8125rem;color:var(--apple-gray);line-height:1.5;">
+              AI-Powered Civic Waste Portal with Gemini Vision classification &amp; Leaflet GIS.
+            </p>
+          </div>
+          <div style="margin-top:1rem;padding-top:0.75rem;border-top:1px solid var(--apple-border);display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:var(--apple-gray);">
+            <div style="display:flex;align-items:center;gap:0.375rem;">
+              <span style="width:10px;height:10px;border-radius:9999px;background:#f1e05a;"></span>
+              <span>JavaScript</span>
+            </div>
+            <span style="color:var(--apple-accent);font-weight:600;">Browse Code →</span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       9. Direct Contact & Communication (#contact)
+       ======================================================================== -->
+  <section id="contact">
+    <div class="container">
+      
+      <div style="max-w:48rem;margin-bottom:2.5rem;">
+        <span class="section-eyebrow">Get In Touch</span>
+        <h2 class="section-title">Let's connect.</h2>
+        <p class="section-desc">Whether you have an engineering role to fill, a project idea, or just want to discuss AI systems, my inbox is open.</p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Left: Quick Communication Bento -->
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          
+          <!-- Direct Email Box with Click to Copy -->
+          <div class="apple-card" style="padding:1.5rem;">
+            <span style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--apple-gray);display:block;margin-bottom:0.5rem;">Direct Email</span>
+            <div style="font-size:1.125rem;font-weight:700;color:var(--apple-text-strong);word-break:break-all;margin-bottom:1rem;">
+              athul1296krishna@gmail.com
+            </div>
+            <button id="copy-email-btn" class="apple-btn-secondary" style="width:100%;justify-content:center;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              <span>Copy Email Address</span>
+            </button>
+          </div>
+
+          <!-- Resume Download Box -->
+          <div class="apple-card" style="padding:1.5rem;">
+            <span style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--apple-gray);display:block;margin-bottom:0.5rem;">Curriculum Vitae</span>
+            <p style="font-size:0.875rem;font-weight:600;color:var(--apple-text-strong);margin-bottom:1rem;">
+              Download complete ATS-formatted software engineering resume
+            </p>
+            <a href="resume.pdf" download="Athul_Krishna_Resume.pdf" class="apple-btn-primary" style="width:100%;justify-content:center;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+              <span>Download Resume (PDF)</span>
+            </a>
+          </div>
+
+          <!-- Quick Specs -->
+          <div class="apple-card" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem;">
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <div class="pillar-icon-box" style="margin-bottom:0;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <span style="font-size:0.6875rem;color:var(--apple-gray);display:block;">Phone / WhatsApp</span>
+                <span style="font-size:0.875rem;font-weight:600;color:var(--apple-text-strong);">+91 7034405846</span>
+              </div>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <div class="pillar-icon-box" style="margin-bottom:0;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <span style="font-size:0.6875rem;color:var(--apple-gray);display:block;">Location</span>
+                <span style="font-size:0.875rem;font-weight:600;color:var(--apple-text-strong);">Malappuram, Kerala</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Clean Contact Form -->
+        <div class="apple-card" style="padding:2rem;">
+          <h3 style="font-size:1.25rem;font-weight:700;color:var(--apple-text-strong);letter-spacing:-0.02em;margin-bottom:1.5rem;">
+            Send a Direct Message
+          </h3>
+
+          <div id="form-success-message" style="display:none;padding:2rem 0;text-align:center;">
+            <div style="width:3rem;height:3rem;border-radius:9999px;background:rgba(48,209,88,0.12);color:#30d158;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h4 style="font-size:1.125rem;font-weight:700;color:var(--apple-text-strong);">Message Prepared</h4>
+            <p style="font-size:0.8125rem;color:var(--apple-gray);margin-top:0.5rem;max-width:20rem;margin-left:auto;margin-right:auto;">
+              Thank you! Your email client has been prepared. I'll get back to you shortly.
+            </p>
+            <button id="reset-form-btn" class="apple-btn-secondary" style="margin-top:1.25rem;">
+              Send another message
+            </button>
+          </div>
+
+          <form id="contact-form">
+            <div style="display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:1rem;">
+              <div class="form-group" style="margin-bottom:0;">
+                <label for="form-name" class="form-label">Your Name</label>
+                <input type="text" id="form-name" class="form-input" placeholder="e.g. Sarah Jenkins">
+                <span id="name-error" class="form-error">Please provide your name.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:0;">
+                <label for="form-email" class="form-label">Your Email</label>
+                <input type="email" id="form-email" class="form-input" placeholder="e.g. sarah@company.com">
+                <span id="email-error" class="form-error">Please enter a valid email address.</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="form-subject" class="form-label">Subject</label>
+              <input type="text" id="form-subject" class="form-input" placeholder="e.g. Developer Role / Collaboration">
+            </div>
+
+            <div class="form-group">
+              <label for="form-message" class="form-label">Message</label>
+              <textarea id="form-message" rows="4" class="form-textarea" placeholder="Tell me about your project, team, or opportunity..." style="resize:none;"></textarea>
+              <span id="message-error" class="form-error">Message should be at least 8 characters.</span>
+            </div>
+
+            <button type="submit" class="apple-btn-primary" style="width:100%;padding:0.75rem;font-size:0.875rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <span>Send Inquiry</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Minimalist Footer
+       ======================================================================== -->
+  <footer>
+    <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem;font-size:0.75rem;color:var(--apple-gray);line-height:1.6;">
+      <div style="max-width:44rem;">
+        <span style="font-weight:600;color:var(--apple-text-strong);">© 2026 Athul Krishna R.</span> All content on this website is protected by copyright law. Unauthorized use or reproduction of any materials without permission is strictly prohibited.
+      </div>
+      <button id="back-to-top-btn" class="apple-btn-secondary" style="font-size:0.75rem;padding:0.375rem 0.875rem;flex-shrink:0;" aria-label="Back to top">
+        <span>Back to Top</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       Project Case Study Modal
+       ======================================================================== -->
+  <div id="project-modal" class="modal-backdrop">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <div>
+          <span id="pm-category" class="apple-tag" style="margin-bottom:0.25rem;">Category</span>
+          <h3 id="pm-title" style="font-size:1.375rem;font-weight:700;color:var(--apple-text-strong);">Project Title</h3>
+        </div>
+        <button class="modal-close-btn close-project-modal" aria-label="Close modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div style="border-radius:20px;overflow:hidden;border:1px solid var(--apple-border);background:#000000;margin-bottom:1.5rem;">
+          <img id="pm-image" src="" alt="Project Preview" style="width:100%;max-height:22rem;object-fit:cover;">
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:1.25rem;">
+          <div class="apple-card-elevated" style="padding:1.25rem;">
+            <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--apple-gray);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.375rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+              <span>The Problem</span>
+            </div>
+            <p id="pm-problem" style="font-size:0.875rem;color:var(--apple-text-strong);line-height:1.6;"></p>
+          </div>
+
+          <div class="apple-card-elevated" style="padding:1.25rem;">
+            <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--apple-accent);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.375rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>The Solution</span>
+            </div>
+            <p id="pm-solution" style="font-size:0.875rem;color:var(--apple-text-strong);line-height:1.6;"></p>
+          </div>
+        </div>
+
+        <div class="apple-card-elevated" style="padding:1.25rem;margin-bottom:1.25rem;">
+          <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--apple-gray);margin-bottom:0.5rem;">System Architecture &amp; Data Pipeline</div>
+          <p id="pm-arch" style="font-size:0.875rem;color:var(--apple-gray);line-height:1.6;"></p>
+        </div>
+
+        <div class="apple-card-elevated" style="padding:1.25rem;margin-bottom:1.25rem;">
+          <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--apple-gray);margin-bottom:0.75rem;">Technical Challenges Solved</div>
+          <ul id="pm-challenges" style="list-style:none;"></ul>
+        </div>
+
+        <div class="apple-card-elevated" style="padding:1.25rem;margin-bottom:1.25rem;">
+          <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:#30d158;margin-bottom:0.5rem;">My Engineering Contributions</div>
+          <p id="pm-contribution" style="font-size:0.875rem;color:var(--apple-gray);line-height:1.6;"></p>
+        </div>
+
+        <div>
+          <span style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--apple-gray);display:block;margin-bottom:0.5rem;">Full Technology Stack</span>
+          <div id="pm-tech" style="display:flex;flex-wrap:wrap;gap:0.375rem;"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <a id="pm-live-btn" href="#" target="_blank" rel="noopener noreferrer" class="apple-btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            <span>Open Live Demo</span>
+          </a>
+          <a id="pm-github-btn" href="#" target="_blank" rel="noopener noreferrer" class="apple-btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            <span>Source Code</span>
+          </a>
+        </div>
+        <button class="close-project-modal" style="font-size:0.8125rem;color:var(--apple-gray);">Dismiss</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Certificate Preview Lightbox Modal
+       ======================================================================== -->
+  <div id="cert-modal" class="modal-backdrop">
+    <div class="modal-sheet" style="max-width:760px;">
+      <div class="modal-header">
+        <div>
+          <h3 id="cm-title" style="font-size:1.125rem;font-weight:700;color:var(--apple-text-strong);">Certificate Title</h3>
+          <p id="cm-issuer" style="font-size:0.75rem;color:var(--apple-gray);margin-top:0.25rem;">Issuer</p>
+        </div>
+        <button class="modal-close-btn close-cert-modal" aria-label="Close modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div style="border-radius:20px;overflow:hidden;border:1px solid var(--apple-border);background:#000000;padding:1rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+          <img id="cm-image" src="" alt="Certificate" style="max-width:100%;max-height:24rem;object-fit:contain;">
+        </div>
+
+        <div class="apple-card-elevated" style="padding:1.25rem;display:flex;flex-direction:column;gap:0.75rem;">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0.5rem;">
+            <span style="font-size:0.75rem;color:var(--apple-gray);">Credential Identifier:</span>
+            <span id="cm-id" class="apple-tag" style="font-family:monospace;font-weight:700;">ID</span>
+          </div>
+          <div style="padding-top:0.5rem;border-top:1px solid var(--apple-border);font-size:0.8125rem;color:var(--apple-gray);">
+            <strong style="color:var(--apple-text-strong);">Highlight:</strong> <span id="cm-highlight"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a id="cm-verify-btn" href="#" target="_blank" rel="noopener noreferrer" class="apple-btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Verify Official Credential</span>
+        </a>
+        <button class="close-cert-modal" style="font-size:0.8125rem;color:var(--apple-gray);">Dismiss</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pure Vanilla JavaScript -->
+  <script src="script.js"></script>
+</body>
 </html>
