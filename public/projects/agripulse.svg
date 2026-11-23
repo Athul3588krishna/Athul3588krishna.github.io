@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14"/>
+      <stop offset="100%" stop-color="#050608"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4A17"/>
+      <stop offset="100%" stop-color="#FF7844"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Grid Pattern -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <path d="M0 50 H800 M0 100 H800 M0 150 H800 M0 200 H800 M0 250 H800 M0 300 H800 M0 350 H800 M0 400 H800 M0 450 H800"/>
+    <path d="M50 0 V500 M100 0 V500 M150 0 V500 M200 0 V500 M250 0 V500 M300 0 V500 M350 0 V500 M400 0 V500 M450 0 V500 M500 0 V500 M550 0 V500 M600 0 V500 M650 0 V500 M700 0 V500 M750 0 V500"/>
+  </g>
+
+  <!-- Ambient Glow Circles -->
+  <circle cx="280" cy="220" r="160" fill="#FF4A17" fill-opacity="0.12" filter="url(#glow)"/>
+  <circle cx="560" cy="280" r="140" fill="#22D3EE" fill-opacity="0.08" filter="url(#glow)"/>
+
+  <!-- AI Vision Scan HUD Frame -->
+  <rect x="80" y="60" width="640" height="380" rx="20" fill="#0C0D16" fill-opacity="0.75" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5"/>
+  <rect x="80" y="60" width="640" height="380" rx="20" stroke="url(#accentGrad)" stroke-opacity="0.3" stroke-width="1"/>
+
+  <!-- Top Bar -->
+  <circle cx="110" cy="90" r="5" fill="#EF4444" fill-opacity="0.8"/>
+  <circle cx="128" cy="90" r="5" fill="#F59E0B" fill-opacity="0.8"/>
+  <circle cx="146" cy="90" r="5" fill="#10B981" fill-opacity="0.8"/>
+  <text x="175" y="94" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94A3B8" letter-spacing="1">AGRIPULSE_CORE_v2.4 // PYTORCH_MOBILENET_INFERENCE</text>
+  <rect x="620" y="80" width="80" height="20" rx="6" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-opacity="0.4"/>
+  <text x="660" y="94" font-family="'JetBrains Mono', monospace" font-size="10" fill="#34D399" text-anchor="middle" font-weight="600">LIVE AGENT</text>
+
+  <!-- Central Computer Vision Scan Window -->
+  <g transform="translate(120, 130)">
+    <!-- Leaf Scan Zone -->
+    <rect width="260" height="270" rx="14" fill="#08090E" stroke="#ffffff" stroke-opacity="0.08"/>
+    
+    <!-- Targeting Crosshairs -->
+    <path d="M20 20 H50 M20 20 V50" stroke="#FF4A17" stroke-width="2"/>
+    <path d="M240 20 H210 M240 20 V50" stroke="#FF4A17" stroke-width="2"/>
+    <path d="M20 250 H50 M20 250 V220" stroke="#FF4A17" stroke-width="2"/>
+    <path d="M240 250 H210 M240 250 V220" stroke="#FF4A17" stroke-width="2"/>
+
+    <!-- Stylized Crop Leaf Shape with Lesion Markers -->
+    <path d="M130 50 C180 80 210 140 180 200 C150 240 130 250 130 250 C130 250 110 240 80 200 C50 140 80 80 130 50 Z" fill="#059669" fill-opacity="0.25" stroke="#10B981" stroke-width="2"/>
+    <path d="M130 50 V250" stroke="#10B981" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <path d="M130 110 Q160 130 180 150 M130 150 Q165 175 175 195 M130 110 Q100 130 80 150 M130 150 Q95 175 85 195" stroke="#10B981" stroke-width="1.2" stroke-opacity="0.7"/>
+
+    <!-- Lesion Detection Boxes (HSV OpenCV) -->
+    <rect x="145" y="115" width="34" height="34" rx="4" fill="#FF4A17" fill-opacity="0.3" stroke="#FF4A17" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <text x="145" y="110" font-family="'JetBrains Mono', monospace" font-size="8" fill="#FF7844">LESION: 96.8%</text>
+
+    <!-- Scan Line -->
+    <line x1="30" y1="140" x2="230" y2="140" stroke="#22D3EE" stroke-width="2" filter="url(#glow)"/>
+    <rect x="30" y="125" width="200" height="30" fill="url(#cyanGrad)" fill-opacity="0.12"/>
+  </g>
+
+  <!-- Right Telemetry & Agentic Panel -->
+  <g transform="translate(410, 130)">
+    
+    <!-- Model Confidence Card -->
+    <rect width="270" height="75" rx="12" fill="#0E101A" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="20" y="28" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#ffffff">Disease Detection Telemetry</text>
+    <text x="20" y="48" font-family="'JetBrains Mono', monospace" font-size="11" fill="#FF7844">Tomato Early Blight (Alternaria)</text>
+    <rect x="20" y="56" width="230" height="6" rx="3" fill="#ffffff" fill-opacity="0.08"/>
+    <rect x="20" y="56" width="215" height="6" rx="3" fill="url(#accentGrad)"/>
+    <text x="215" y="48" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8" text-anchor="end">98.4% Acc</text>
+
+    <!-- ReAct Agentic Loop Card -->
+    <g transform="translate(0, 90)">
+      <rect width="270" height="90" rx="12" fill="#0E101A" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="20" y="25" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#ffffff">ReAct Multi-Tool Agent Execution</text>
+      
+      <circle cx="28" cy="45" r="4" fill="#22D3EE"/>
+      <text x="40" y="48" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">Tool: Open-Meteo Spray Safety</text>
+      
+      <circle cx="28" cy="65" r="4" fill="#A855F7"/>
+      <text x="40" y="68" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">RAG: KAU Advisory Knowledge Base</text>
+
+      <circle cx="28" cy="85" r="4" fill="#10B981"/>
+      <text x="40" y="88" font-family="'JetBrains Mono', monospace" font-size="10" fill="#34D399">Output: Malayalam Voice Audio Stream</text>
+    </g>
+
+    <!-- Soundwave & Malayalam Audio Visualizer -->
+    <g transform="translate(0, 195)">
+      <rect width="270" height="75" rx="12" fill="#0E101A" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="20" y="26" font-family="'JetBrains Mono', monospace" font-size="10" fill="#CBD5E1">VOICE: &quot;കുമിൾനാശിനി പ്രയോഗിക്കാൻ അനുയോജ്യം&quot;</text>
+      
+      <!-- Waveform Bars -->
+      <g transform="translate(20, 36)" fill="#FF4A17">
+        <rect x="0" y="12" width="4" height="16" rx="2"/>
+        <rect x="8" y="6" width="4" height="28" rx="2"/>
+        <rect x="16" y="2" width="4" height="36" rx="2"/>
+        <rect x="24" y="8" width="4" height="24" rx="2"/>
+        <rect x="32" y="14" width="4" height="12" rx="2"/>
+        <rect x="40" y="4" width="4" height="32" rx="2"/>
+        <rect x="48" y="0" width="4" height="40" rx="2"/>
+        <rect x="56" y="10" width="4" height="20" rx="2"/>
+        <rect x="64" y="16" width="4" height="8" rx="2"/>
+        <rect x="72" y="2" width="4" height="36" rx="2"/>
+        <rect x="80" y="6" width="4" height="28" rx="2"/>
+        <rect x="88" y="12" width="4" height="16" rx="2"/>
+        <rect x="96" y="18" width="4" height="4" rx="2"/>
+        <rect x="104" y="8" width="4" height="24" rx="2"/>
+        <rect x="112" y="2" width="4" height="36" rx="2"/>
+        <rect x="120" y="0" width="4" height="40" rx="2"/>
+        <rect x="128" y="4" width="4" height="32" rx="2"/>
+        <rect x="136" y="12" width="4" height="16" rx="2"/>
+        <rect x="144" y="8" width="4" height="24" rx="2"/>
+        <rect x="152" y="14" width="4" height="12" rx="2"/>
+        <rect x="160" y="4" width="4" height="32" rx="2"/>
+        <rect x="168" y="2" width="4" height="36" rx="2"/>
+        <rect x="176" y="10" width="4" height="20" rx="2"/>
+        <rect x="184" y="6" width="4" height="28" rx="2"/>
+        <rect x="192" y="12" width="4" height="16" rx="2"/>
+        <rect x="200" y="18" width="4" height="4" rx="2"/>
+        <rect x="208" y="8" width="4" height="24" rx="2"/>
+        <rect x="216" y="14" width="4" height="12" rx="2"/>
+        <rect x="224" y="4" width="4" height="32" rx="2"/>
+      </g>
+    </g>
+
+  </g>
+
+</svg>
