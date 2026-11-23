@@ -1,4 +1,5 @@
 import React from 'react';
+import LiveWallpaper from './components/LiveWallpaper';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MarqueeTicker from './components/MarqueeTicker';
@@ -19,6 +20,9 @@ export default function App() {
   return (
     <div className="relative min-h-screen bg-[#08090D] text-slate-100 selection:bg-[#FF4A17]/25 selection:text-[#FF7844]">
       
+      {/* Real-Time Interactive Live Wallpaper (Aurora Glows, Cyber Mesh & Cursor Spotlight) */}
+      <LiveWallpaper />
+
       {/* Sticky Navigation Bar */}
       <Navbar />
 
@@ -26,7 +30,7 @@ export default function App() {
       <FloatingSidebar />
 
       {/* Main Content Sections */}
-      <main>
+      <main className="relative z-10">
         <Hero />
         
         {/* Infinite High-Impact Marquee Ticker (Saihasoft Signature) */}
@@ -45,7 +49,9 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
 
     </div>
   );

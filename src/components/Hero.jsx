@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import {
   ArrowDown,
@@ -17,88 +17,6 @@ import {
 import { profileData } from '../data/profile';
 
 export default function Hero() {
-  const canvasRef = useRef(null);
-
-  // Subtle interactive cosmic particle mesh on background canvas
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let animationFrameId;
-
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
-
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    };
-    window.addEventListener('resize', handleResize);
-
-    const particlesCount = Math.min(Math.floor(width / 32), 45);
-    const particles = [];
-
-    for (let i = 0; i < particlesCount; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 1.6 + 0.8,
-        color: i % 3 === 0 ? 'rgba(255, 74, 23, ' : i % 3 === 1 ? 'rgba(34, 211, 238, ' : 'rgba(139, 92, 246, ',
-        alpha: Math.random() * 0.4 + 0.15
-      });
-    }
-
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      // Connect nearby particles with subtle glowing lines
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 130) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(255, 74, 23, ${0.1 * (1 - dist / 130)})`;
-            ctx.lineWidth = 0.7;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-          }
-        }
-      }
-
-      // Draw and move particles
-      for (const p of particles) {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.x < 0) p.x = width;
-        if (p.x > width) p.x = 0;
-        if (p.y < 0) p.y = height;
-        if (p.y > height) p.y = 0;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = p.color + p.alpha + ')';
-        ctx.fill();
-      }
-
-      animationFrameId = requestAnimationFrame(render);
-    };
-
-    render();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
-
   const stats = [
     { label: "MCA Student", value: "MEA Engg College" },
     { label: "Core Expertise", value: "AI/ML • MERN • Vision" },
@@ -109,16 +27,9 @@ export default function Hero() {
     <header
       id="hero"
       aria-label="Athul Krishna R Introduction"
-      className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 lg:py-24 overflow-hidden bg-[#08090D] bg-grid-tech"
+      className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 lg:py-24 overflow-hidden"
     >
-      {/* Background Particle Canvas */}
-      <canvas
-        ref={canvasRef}
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none z-0 opacity-70"
-      />
-
-      {/* Ambient Glows */}
+      {/* Subtle Ambient Depth Lighting */}
       <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-[#FF4A17]/15 via-purple-600/10 to-transparent rounded-full blur-[150px] pointer-events-none -z-10" />
       <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-[#22D3EE]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
 
