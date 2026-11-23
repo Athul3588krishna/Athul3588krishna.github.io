@@ -1,93 +1,114 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
   <defs>
-    <linearGradient id="bgAutoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b0f19" />
-      <stop offset="50%" stop-color="#111827" />
-      <stop offset="100%" stop-color="#180e29" />
+    <linearGradient id="eyBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0D14"/>
+      <stop offset="100%" stop-color="#050608"/>
     </linearGradient>
-    <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f59e0b" />
-      <stop offset="50%" stop-color="#06b6d4" />
-      <stop offset="100%" stop-color="#8b5cf6" />
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#FF4A17"/>
     </linearGradient>
-    <filter id="autoGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
+    <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4A17"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+    <filter id="eyGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
       <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
 
-  <rect width="800" height="500" rx="16" fill="url(#bgAutoGrad)" stroke="#1f2937" stroke-width="2"/>
-
-  <!-- Top bar -->
-  <rect x="24" y="24" width="752" height="42" rx="8" fill="#131b2e" stroke="#1f2937"/>
-  <circle cx="48" cy="45" r="5" fill="#ef4444" />
-  <circle cx="66" cy="45" r="5" fill="#eab308" />
-  <circle cx="84" cy="45" r="5" fill="#22c55e" />
-  <rect x="110" y="34" width="340" height="22" rx="6" fill="#0b1120" stroke="#1e293b"/>
-  <text x="125" y="49" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8">https://eyauto.internal/dispatch-engine</text>
-  <rect x="640" y="34" width="116" height="22" rx="6" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="0.8"/>
-  <text x="698" y="49" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" fill="#c084fc" text-anchor="middle">WS: 42ms LATENCY</text>
-
-  <!-- Left: Live Geospatial Transit Route -->
-  <rect x="24" y="86" width="480" height="388" rx="12" fill="#030712" stroke="#1f2937"/>
-  <!-- Map streets grid -->
-  <path d="M 40,150 L 484,150 M 40,280 L 484,280 M 40,390 L 484,390" stroke="#111827" stroke-width="14"/>
-  <path d="M 120,86 L 120,474 M 260,86 L 260,474 M 400,86 L 400,474" stroke="#111827" stroke-width="14"/>
-
-  <!-- Dynamic Transit Polyline (OpenRouteService) -->
-  <path d="M 120,390 L 120,280 L 260,280 L 260,150 L 400,150" fill="none" stroke="url(#routeGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#autoGlow)"/>
-
-  <!-- Pickup Marker -->
-  <circle cx="120" cy="390" r="10" fill="#10b981" fill-opacity="0.3"/>
-  <circle cx="120" cy="390" r="5" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
-  <rect x="60" y="410" width="120" height="24" rx="4" fill="#111827" stroke="#10b981"/>
-  <text x="120" y="426" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#34d399" text-anchor="middle">Pickup: College Gate</text>
-
-  <!-- Auto Rickshaw Live Position -->
-  <circle cx="260" cy="220" r="14" fill="#f59e0b" fill-opacity="0.3" filter="url(#autoGlow)"/>
-  <circle cx="260" cy="220" r="7" fill="#fbbf24" stroke="#ffffff" stroke-width="2"/>
-  <rect x="280" y="208" width="110" height="24" rx="4" fill="#1e293b" stroke="#f59e0b"/>
-  <text x="335" y="224" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#fbbf24" text-anchor="middle">KL-10-AZ-4921</text>
-
-  <!-- Destination Marker -->
-  <circle cx="400" cy="150" r="10" fill="#8b5cf6" fill-opacity="0.3"/>
-  <circle cx="400" cy="150" r="5" fill="#8b5cf6" stroke="#ffffff" stroke-width="2"/>
-  <rect x="350" y="105" width="100" height="24" rx="4" fill="#111827" stroke="#8b5cf6"/>
-  <text x="400" y="121" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#c084fc" text-anchor="middle">Drop: Town Hub</text>
-
-  <!-- Right: Dispatch Card & Telemetry -->
-  <rect x="524" y="86" width="252" height="388" rx="12" fill="#0f172a" stroke="#1f2937"/>
+  <rect width="800" height="500" fill="url(#eyBgGrad)"/>
   
-  <text x="544" y="118" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700" fill="#f8fafc">Ride Active</text>
-  <rect x="544" y="132" width="212" height="74" rx="8" fill="#1e293b" stroke="#334155"/>
-  <text x="560" y="156" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8">Estimated Distance</text>
-  <text x="560" y="180" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" fill="#38bdf8">2.8 km (8 min)</text>
-  <text x="690" y="180" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" fill="#34d399">₹ 45</text>
+  <!-- Subtle Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <path d="M0 50 H800 M0 100 H800 M0 150 H800 M0 200 H800 M0 250 H800 M0 300 H800 M0 350 H800 M0 400 H800 M0 450 H800"/>
+    <path d="M50 0 V500 M100 0 V500 M150 0 V500 M200 0 V500 M250 0 V500 M300 0 V500 M350 0 V500 M400 0 V500 M450 0 V500 M500 0 V500 M550 0 V500 M600 0 V500 M650 0 V500 M700 0 V500 M750 0 V500"/>
+  </g>
 
-  <!-- Driver Card -->
-  <rect x="544" y="218" width="212" height="114" rx="8" fill="#111827" stroke="#334155"/>
-  <circle cx="574" cy="248" r="16" fill="#f59e0b" fill-opacity="0.2"/>
-  <text x="574" y="253" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#fbbf24" text-anchor="middle">🛺</text>
-  <text x="602" y="244" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#f1f5f9">Suresh Kumar</text>
-  <text x="602" y="260" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">Verified Driver ★ 4.9</text>
-  
-  <rect x="556" y="280" width="188" height="24" rx="4" fill="#0f172a"/>
-  <text x="650" y="296" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8" text-anchor="middle">Socket ID: sck_7a92f8</text>
+  <!-- Glowing Radar Circles -->
+  <circle cx="280" cy="250" r="180" stroke="#FF4A17" stroke-opacity="0.12" stroke-width="1.5" fill="none"/>
+  <circle cx="280" cy="250" r="120" stroke="#FF4A17" stroke-opacity="0.2" stroke-width="1.5" fill="none"/>
+  <circle cx="280" cy="250" r="60" stroke="#FF4A17" stroke-opacity="0.3" stroke-width="1.5" fill="#FF4A17" fill-opacity="0.05"/>
 
-  <!-- Technology Badges -->
-  <text x="544" y="360" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Stack Integrations</text>
-  <rect x="544" y="372" width="100" height="24" rx="4" fill="#1e293b"/>
-  <text x="594" y="388" font-family="'JetBrains Mono', monospace" font-size="10" fill="#38bdf8" text-anchor="middle">Socket.io</text>
+  <!-- Main HUD Frame -->
+  <rect x="80" y="60" width="640" height="380" rx="20" fill="#0C0D16" fill-opacity="0.75" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5"/>
 
-  <rect x="652" y="372" width="104" height="24" rx="4" fill="#1e293b"/>
-  <text x="704" y="388" font-family="'JetBrains Mono', monospace" font-size="10" fill="#34d399" text-anchor="middle">Leaflet GIS</text>
+  <!-- Top Bar -->
+  <circle cx="110" cy="90" r="5" fill="#EF4444" fill-opacity="0.8"/>
+  <circle cx="128" cy="90" r="5" fill="#F59E0B" fill-opacity="0.8"/>
+  <circle cx="146" cy="90" r="5" fill="#10B981" fill-opacity="0.8"/>
+  <text x="175" y="94" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94A3B8" letter-spacing="1">EY_AUTO_DISPATCH // SOCKET.IO_BIDIRECTIONAL_GPS</text>
+  <rect x="590" y="80" width="110" height="20" rx="6" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-opacity="0.4"/>
+  <text x="645" y="94" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FBBF24" text-anchor="middle" font-weight="600">3 MODULES ACTIVE</text>
 
-  <rect x="544" y="404" width="212" height="24" rx="4" fill="#1e293b"/>
-  <text x="650" y="420" font-family="'JetBrains Mono', monospace" font-size="10" fill="#c084fc" text-anchor="middle">OpenRouteService API</text>
+  <!-- Left Map Navigation & Route -->
+  <g transform="translate(110, 125)">
+    <rect width="320" height="280" rx="14" fill="#08090E" stroke="#ffffff" stroke-opacity="0.08"/>
+    
+    <!-- Stylized Roads -->
+    <path d="M40 80 H280 M120 20 V260 M220 40 V240 M40 200 H280" stroke="#1E293B" stroke-width="12" stroke-linecap="round"/>
+    <path d="M40 80 H280 M120 20 V260 M220 40 V240 M40 200 H280" stroke="#334155" stroke-width="4" stroke-dasharray="8 6"/>
 
-  <rect x="544" y="438" width="212" height="26" rx="6" fill="#06b6d4" fill-opacity="0.15" stroke="#06b6d4" stroke-width="0.8"/>
-  <text x="650" y="455" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#22d3ee" text-anchor="middle">Zero Commission Model</text>
+    <!-- Active Trip Route Path -->
+    <path d="M80 80 H120 V200 H220 V140" stroke="url(#routeGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#eyGlow)"/>
+
+    <!-- Pickup Marker -->
+    <circle cx="80" cy="80" r="8" fill="#10B981" stroke="#ffffff" stroke-width="2"/>
+    <text x="95" y="75" font-family="'JetBrains Mono', monospace" font-size="9" fill="#34D399" font-weight="700">PICKUP: VALANCHERY</text>
+
+    <!-- Destination Marker -->
+    <circle cx="220" cy="140" r="8" fill="#FF4A17" stroke="#ffffff" stroke-width="2"/>
+    <text x="160" y="125" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FF7844" font-weight="700">DEST: KRS COLLEGE</text>
+
+    <!-- Auto Rickshaw Moving Marker -->
+    <circle cx="160" cy="200" r="14" fill="#F59E0B" fill-opacity="0.3" filter="url(#eyGlow)"/>
+    <circle cx="160" cy="200" r="7" fill="#F59E0B" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="160" y="228" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FBBF24" text-anchor="middle" font-weight="bold">AUTO #KL-55-E-4210</text>
+  </g>
+
+  <!-- Right Dashboard Cards -->
+  <g transform="translate(460, 125)">
+    
+    <!-- Trip Status Card -->
+    <rect width="230" height="85" rx="12" fill="#0E101A" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="16" y="25" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#ffffff">Ride Dispatch Status</text>
+    <text x="16" y="48" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#10B981">DRIVER EN ROUTE</text>
+    <text x="16" y="68" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">ETA: 3.4 mins • 1.8 km</text>
+
+    <!-- Socket.IO Telemetry Card -->
+    <g transform="translate(0, 100)">
+      <rect width="230" height="90" rx="12" fill="#0E101A" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="16" y="24" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#ffffff">Socket.IO Event Stream</text>
+      
+      <circle cx="24" cy="42" r="3.5" fill="#34D399"/>
+      <text x="34" y="45" font-family="'JetBrains Mono', monospace" font-size="9" fill="#CBD5E1">trip:driver_accepted (32ms)</text>
+
+      <circle cx="24" cy="60" r="3.5" fill="#38BDF8"/>
+      <text x="34" y="63" font-family="'JetBrains Mono', monospace" font-size="9" fill="#CBD5E1">gps:location_broadcast</text>
+
+      <circle cx="24" cy="78" r="3.5" fill="#F59E0B"/>
+      <text x="34" y="81" font-family="'JetBrains Mono', monospace" font-size="9" fill="#CBD5E1">auth:jwt_session_valid</text>
+    </g>
+
+    <!-- Module Badges -->
+    <g transform="translate(0, 205)">
+      <rect width="70" height="70" rx="10" fill="#0E101A" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="35" y="32" font-family="'JetBrains Mono', monospace" font-size="16" fill="#38BDF8" text-anchor="middle">👤</text>
+      <text x="35" y="52" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8" text-anchor="middle">Passenger</text>
+
+      <rect x="80" y="0" width="70" height="70" rx="10" fill="#0E101A" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="115" y="32" font-family="'JetBrains Mono', monospace" font-size="16" fill="#F59E0B" text-anchor="middle">🛺</text>
+      <text x="115" y="52" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8" text-anchor="middle">Driver</text>
+
+      <rect x="160" y="0" width="70" height="70" rx="10" fill="#0E101A" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="195" y="32" font-family="'JetBrains Mono', monospace" font-size="16" fill="#A855F7" text-anchor="middle">🛡️</text>
+      <text x="195" y="52" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8" text-anchor="middle">Admin</text>
+    </g>
+
+  </g>
+
 </svg>

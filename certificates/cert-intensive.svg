@@ -1,52 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" fill="none">
   <defs>
-    <linearGradient id="intBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#091018" />
-      <stop offset="50%" stop-color="#101c2b" />
-      <stop offset="100%" stop-color="#0a121c" />
+    <linearGradient id="intBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E0F18"/>
+      <stop offset="100%" stop-color="#06070B"/>
     </linearGradient>
-    <linearGradient id="intBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#06b6d4" />
-      <stop offset="50%" stop-color="#3b82f6" />
-      <stop offset="100%" stop-color="#8b5cf6" />
+    <linearGradient id="violetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
     </linearGradient>
   </defs>
 
-  <rect width="800" height="560" rx="16" fill="url(#intBg)" stroke="#1a2d42" stroke-width="2"/>
-  <rect x="20" y="20" width="760" height="520" rx="12" fill="none" stroke="url(#intBorder)" stroke-width="1.5" stroke-dasharray="8 4"/>
-  <rect x="30" y="30" width="740" height="500" rx="10" fill="#070d14" fill-opacity="0.9" stroke="#132130"/>
-
-  <circle cx="400" cy="95" r="34" fill="#0e1f33" stroke="#06b6d4" stroke-width="2"/>
-  <text x="400" y="103" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" fill="#06b6d4" text-anchor="middle">⚡</text>
-
-  <text x="400" y="155" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#38bdf8" letter-spacing="4" text-anchor="middle">ENTRI ELEVATE ENGINEERING ACADEMY</text>
-  <text x="400" y="195" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="800" fill="#f8fafc" text-anchor="middle">8-Month Intensive Full Stack Development Program</text>
+  <rect width="900" height="600" rx="16" fill="url(#intBgGrad)"/>
   
-  <text x="400" y="235" font-family="'Inter', sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Presented with distinction to</text>
-  <text x="400" y="275" font-family="'Space Grotesk', sans-serif" font-size="26" font-weight="700" fill="#38bdf8" text-anchor="middle">ATHUL KRISHNA R</text>
-  
-  <line x1="250" y1="290" x2="550" y2="290" stroke="#334155" stroke-width="1"/>
+  <rect x="25" y="25" width="850" height="550" rx="12" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"/>
+  <rect x="35" y="35" width="830" height="530" rx="8" stroke="#A855F7" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="6 4"/>
 
-  <text x="400" y="325" font-family="'Inter', sans-serif" font-size="13" fill="#cbd5e1" text-anchor="middle">Successfully completing 8 months of full-time software immersion covering modern web standards,</text>
-  <text x="400" y="347" font-family="'Inter', sans-serif" font-size="13" fill="#cbd5e1" text-anchor="middle">cloud database integrations, and end-to-end desktop applications spanning multiple environments.</text>
+  <text x="450" y="95" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#C084FC" letter-spacing="4" text-anchor="middle">ENTRI ELEVATE ENGINEERING IMMERSION</text>
+  <text x="450" y="130" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="800" fill="#ffffff" letter-spacing="2" text-anchor="middle">8-MONTH INTENSIVE SOFTWARE PROGRAM</text>
+  <line x1="300" y1="155" x2="600" y2="155" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
 
-  <g transform="translate(130, 375)">
-    <rect x="0" y="0" width="125" height="26" rx="6" fill="#13263d"/>
-    <text x="62" y="17" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8" text-anchor="middle">Modern Standards</text>
+  <text x="450" y="200" font-family="'Inter', sans-serif" font-size="13" fill="#94A3B8" letter-spacing="1.5" text-anchor="middle">AWARDED TO</text>
+  <text x="450" y="255" font-family="'Space Grotesk', sans-serif" font-size="36" font-weight="800" fill="#ffffff" letter-spacing="1" text-anchor="middle">ATHUL KRISHNA R</text>
 
-    <rect x="135" y="0" width="125" height="26" rx="6" fill="#13263d"/>
-    <text x="197" y="17" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8" text-anchor="middle">Cloud Integrations</text>
+  <text x="450" y="300" font-family="'Inter', sans-serif" font-size="14" fill="#CBD5E1" text-anchor="middle">in recognition of completing 800+ hours of full-time immersive engineering across web, cloud, and desktop</text>
 
-    <rect x="270" y="0" width="125" height="26" rx="6" fill="#13263d"/>
-    <text x="332" y="17" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8" text-anchor="middle">Desktop Apps</text>
+  <rect x="180" y="325" width="540" height="46" rx="23" fill="#A855F7" fill-opacity="0.1" stroke="#A855F7" stroke-opacity="0.4"/>
+  <text x="450" y="355" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" fill="#C084FC" letter-spacing="1" text-anchor="middle">FULL STACK SOFTWARE ENGINEERING INTENSIVE</text>
 
-    <rect x="405" y="0" width="135" height="26" rx="6" fill="#13263d"/>
-    <text x="472" y="17" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8" text-anchor="middle">Production Deploy</text>
+  <text x="450" y="405" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94A3B8" text-anchor="middle">Desktop Environments • SQLite • Git CI/CD • System Design • Production Delivery</text>
+
+  <!-- Seal -->
+  <g transform="translate(450, 480)">
+    <circle cx="0" cy="0" r="38" fill="#1C152B" stroke="#A855F7" stroke-width="2"/>
+    <circle cx="0" cy="0" r="32" stroke="#A855F7" stroke-dasharray="3 3"/>
+    <text x="0" y="-8" font-family="'JetBrains Mono', monospace" font-size="7" fill="#C084FC" text-anchor="middle">8 MONTHS</text>
+    <text x="0" y="6" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="900" fill="#C084FC" text-anchor="middle">800+ HRS</text>
+    <text x="0" y="18" font-family="'JetBrains Mono', monospace" font-size="7" fill="#C084FC" text-anchor="middle">COMPLETED</text>
   </g>
 
-  <text x="80" y="475" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748b">Credential ID: ENTRI-8M-FS-INTENSIVE</text>
-  <text x="80" y="495" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8">Issuing Body: Entri Elevate</text>
+  <!-- Signatures -->
+  <g transform="translate(180, 490)">
+    <line x1="0" y1="0" x2="160" y2="0" stroke="#ffffff" stroke-opacity="0.2"/>
+    <text x="80" y="18" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#E2E8F0" text-anchor="middle">Lead Instructor</text>
+    <text x="80" y="32" font-family="'JetBrains Mono', monospace" font-size="9" fill="#64748B" text-anchor="middle">Elevate Engineering</text>
+  </g>
 
-  <text x="720" y="475" font-family="'JetBrains Mono', monospace" font-size="11" fill="#34d399" text-anchor="end">Status: Completed</text>
-  <text x="720" y="495" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8" text-anchor="end">Duration: 8 Months</text>
+  <g transform="translate(560, 490)">
+    <line x1="0" y1="0" x2="160" y2="0" stroke="#ffffff" stroke-opacity="0.2"/>
+    <text x="80" y="18" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#E2E8F0" text-anchor="middle">Director of Academics</text>
+    <text x="80" y="32" font-family="'JetBrains Mono', monospace" font-size="9" fill="#64748B" text-anchor="middle">Entri App Global</text>
+  </g>
+
+  <text x="450" y="550" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B" text-anchor="middle">CREDENTIAL ID: ENTRI-8M-FS-INTENSIVE • YEAR: 2025</text>
 </svg>

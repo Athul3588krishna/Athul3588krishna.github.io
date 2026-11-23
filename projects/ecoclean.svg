@@ -1,105 +1,113 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0f18" />
-      <stop offset="50%" stop-color="#0e1726" />
-      <stop offset="100%" stop-color="#05141c" />
+    <linearGradient id="ecoBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0D14"/>
+      <stop offset="100%" stop-color="#050608"/>
     </linearGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#10b981" />
-      <stop offset="50%" stop-color="#06b6d4" />
-      <stop offset="100%" stop-color="#3b82f6" />
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
     </linearGradient>
-    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur" />
+    <linearGradient id="geminiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+    <filter id="ecoGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
       <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
 
-  <!-- Canvas Background -->
-  <rect width="800" height="500" rx="16" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="2"/>
-
+  <rect width="800" height="500" fill="url(#ecoBgGrad)"/>
+  
   <!-- Subtle Grid -->
   <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
-    <line x1="0" y1="100" x2="800" y2="100" />
-    <line x1="0" y1="200" x2="800" y2="200" />
-    <line x1="0" y1="300" x2="800" y2="300" />
-    <line x1="0" y1="400" x2="800" y2="400" />
-    <line x1="160" y1="0" x2="160" y2="500" />
-    <line x1="320" y1="0" x2="320" y2="500" />
-    <line x1="480" y1="0" x2="480" y2="500" />
-    <line x1="640" y1="0" x2="640" y2="500" />
+    <path d="M0 50 H800 M0 100 H800 M0 150 H800 M0 200 H800 M0 250 H800 M0 300 H800 M0 350 H800 M0 400 H800 M0 450 H800"/>
+    <path d="M50 0 V500 M100 0 V500 M150 0 V500 M200 0 V500 M250 0 V500 M300 0 V500 M350 0 V500 M400 0 V500 M450 0 V500 M500 0 V500 M550 0 V500 M600 0 V500 M650 0 V500 M700 0 V500 M750 0 V500"/>
   </g>
 
-  <!-- Browser Header Window -->
-  <rect x="24" y="24" width="752" height="42" rx="8" fill="#131b2e" stroke="#1e293b"/>
-  <circle cx="48" cy="45" r="5" fill="#ef4444" />
-  <circle cx="66" cy="45" r="5" fill="#eab308" />
-  <circle cx="84" cy="45" r="5" fill="#22c55e" />
-  <rect x="110" y="34" width="320" height="22" rx="6" fill="#0b1120" stroke="#1e293b"/>
-  <text x="125" y="49" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748b">https://ecoclean.portal/ai-dispatch</text>
-  <rect x="660" y="34" width="96" height="22" rx="6" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="0.8"/>
-  <text x="708" y="49" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#34d399" text-anchor="middle">LIVE SYSTEM</text>
+  <!-- Ambient Glow -->
+  <circle cx="270" cy="240" r="150" fill="#10B981" fill-opacity="0.1" filter="url(#ecoGlow)"/>
+  <circle cx="580" cy="220" r="140" fill="#818CF8" fill-opacity="0.1" filter="url(#ecoGlow)"/>
 
-  <!-- Main Portal UI -->
-  <!-- Left Side: Vision AI Analysis Box -->
-  <rect x="24" y="86" width="460" height="388" rx="12" fill="#0f172a" fill-opacity="0.8" stroke="#334155" stroke-width="1.2"/>
-  
-  <!-- Image Simulation / AI Scan Area -->
-  <rect x="44" y="106" width="420" height="190" rx="10" fill="#020617" stroke="#1e293b"/>
-  <!-- Scan lines -->
-  <line x1="44" y1="180" x2="464" y2="180" stroke="#06b6d4" stroke-width="2" filter="url(#glowFilter)" stroke-dasharray="10 6"/>
-  <!-- Bounding box -->
-  <rect x="140" y="130" width="160" height="130" rx="6" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="6 4"/>
-  <rect x="140" y="112" width="130" height="18" rx="4" fill="#10b981"/>
-  <text x="205" y="125" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#020617" text-anchor="middle">RECYCLABLE PLASTIC 94%</text>
+  <!-- Main Window -->
+  <rect x="80" y="60" width="640" height="380" rx="20" fill="#0C0D16" fill-opacity="0.75" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5"/>
 
-  <!-- AI Inference Info -->
-  <text x="44" y="325" font-family="'Space Grotesk', sans-serif" font-size="17" font-weight="700" fill="#f8fafc">Gemini Vision AI Engine</text>
-  <text x="44" y="348" font-family="'Inter', sans-serif" font-size="13" fill="#94a3b8">Model: gemini-1.5-flash • Multimodal Confidence: 0.942</text>
-  
-  <rect x="44" y="366" width="126" height="30" rx="6" fill="#1e293b"/>
-  <text x="107" y="385" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8" text-anchor="middle">Severity: High</text>
+  <!-- Header -->
+  <circle cx="110" cy="90" r="5" fill="#EF4444" fill-opacity="0.8"/>
+  <circle cx="128" cy="90" r="5" fill="#F59E0B" fill-opacity="0.8"/>
+  <circle cx="146" cy="90" r="5" fill="#10B981" fill-opacity="0.8"/>
+  <text x="175" y="94" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94A3B8" letter-spacing="1">ECOCLEAN_PORTAL // GOOGLE_GEMINI_VISION_API + GIS</text>
+  <rect x="585" y="80" width="115" height="20" rx="6" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-opacity="0.4"/>
+  <text x="642" y="94" font-family="'JetBrains Mono', monospace" font-size="10" fill="#34D399" text-anchor="middle" font-weight="600">SMART CIVIC AI</text>
 
-  <rect x="180" y="366" width="140" height="30" rx="6" fill="#1e293b"/>
-  <text x="250" y="385" font-family="'JetBrains Mono', monospace" font-size="11" fill="#34d399" text-anchor="middle">+50 EcoPoints</text>
+  <!-- Left GIS & Leaflet Interactive Map -->
+  <g transform="translate(110, 125)">
+    <rect width="320" height="280" rx="14" fill="#08090E" stroke="#ffffff" stroke-opacity="0.08"/>
+    
+    <!-- Map Geometry & Contours -->
+    <path d="M30 60 Q120 40 180 90 T300 70" stroke="#1E293B" stroke-width="8" fill="none"/>
+    <path d="M40 220 Q140 180 200 240 T300 200" stroke="#1E293B" stroke-width="8" fill="none"/>
+    <path d="M120 40 V260 M220 20 V260" stroke="#1E293B" stroke-width="6" fill="none"/>
 
-  <rect x="330" y="366" width="134" height="30" rx="6" fill="#1e293b"/>
-  <text x="397" y="385" font-family="'JetBrains Mono', monospace" font-size="11" fill="#a78bfa" text-anchor="middle">Zone: Malappuram</text>
+    <!-- Map Zones -->
+    <circle cx="100" cy="140" r="45" fill="#10B981" fill-opacity="0.08" stroke="#10B981" stroke-opacity="0.2"/>
+    <circle cx="230" cy="170" r="55" fill="#FF4A17" fill-opacity="0.08" stroke="#FF4A17" stroke-opacity="0.2"/>
 
-  <!-- Right Side: Leaflet Map & Dispatch Metrics -->
-  <rect x="504" y="86" width="272" height="186" rx="12" fill="#0b1324" stroke="#1e293b"/>
-  <!-- Mini map simulation -->
-  <path d="M 520,130 Q 560,110 600,140 T 680,120 T 760,150" fill="none" stroke="#334155" stroke-width="4"/>
-  <path d="M 540,240 Q 600,200 660,220 T 750,180" fill="none" stroke="#1e293b" stroke-width="6"/>
-  <circle cx="610" cy="140" r="10" fill="#06b6d4" fill-opacity="0.3" filter="url(#glowFilter)"/>
-  <circle cx="610" cy="140" r="5" fill="#22d3ee" stroke="#ffffff" stroke-width="1.5"/>
-  <circle cx="680" cy="190" r="8" fill="#10b981" fill-opacity="0.3"/>
-  <circle cx="680" cy="190" r="4" fill="#34d399" stroke="#ffffff" stroke-width="1.5"/>
-  <text x="520" y="112" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#94a3b8">LEAFLET GIS DISPATCH</text>
+    <!-- Active Pin 1 (Resolved) -->
+    <circle cx="100" cy="140" r="7" fill="#10B981" stroke="#ffffff" stroke-width="2"/>
+    <text x="100" y="160" font-family="'JetBrains Mono', monospace" font-size="8" fill="#34D399" text-anchor="middle">CLEANED (Ward 4)</text>
 
-  <!-- Municipal Resolution Tracker -->
-  <rect x="504" y="288" width="272" height="186" rx="12" fill="#0f172a" stroke="#1e293b"/>
-  <text x="524" y="316" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#f1f5f9">Resolution Pipeline</text>
-  
-  <!-- Step 1 -->
-  <circle cx="530" cy="345" r="4" fill="#10b981"/>
-  <text x="546" y="349" font-family="'Inter', sans-serif" font-size="12" fill="#e2e8f0">Report Submitted</text>
-  <text x="730" y="349" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">10:14 AM</text>
+    <!-- Active Pin 2 (Reported AI Classified) -->
+    <circle cx="230" cy="170" r="14" fill="#FF4A17" fill-opacity="0.3" filter="url(#ecoGlow)"/>
+    <circle cx="230" cy="170" r="8" fill="#FF4A17" stroke="#ffffff" stroke-width="2"/>
+    <text x="230" y="200" font-family="'JetBrains Mono', monospace" font-size="8" fill="#FF7844" text-anchor="middle">DISPATCHING (Ward 7)</text>
 
-  <!-- Step 2 -->
-  <circle cx="530" cy="380" r="4" fill="#06b6d4"/>
-  <text x="546" y="384" font-family="'Inter', sans-serif" font-size="12" fill="#e2e8f0">AI Validated & Tagged</text>
-  <text x="730" y="384" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">10:15 AM</text>
+    <!-- Leaflet UI Control Overlay -->
+    <rect x="15" y="15" width="28" height="52" rx="4" fill="#171926" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="29" y="34" font-family="'JetBrains Mono', monospace" font-size="14" fill="#ffffff" text-anchor="middle">+</text>
+    <line x1="20" y1="41" x2="38" y2="41" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="29" y="58" font-family="'JetBrains Mono', monospace" font-size="14" fill="#ffffff" text-anchor="middle">-</text>
+  </g>
 
-  <!-- Step 3 -->
-  <circle cx="530" cy="415" r="4" fill="#f59e0b"/>
-  <text x="546" y="419" font-family="'Inter', sans-serif" font-size="12" fill="#e2e8f0">Squad Dispatched</text>
-  <text x="730" y="419" font-family="'JetBrains Mono', monospace" font-size="10" fill="#f59e0b">En Route</text>
+  <!-- Right Gemini Vision & Eco-Points Panel -->
+  <g transform="translate(460, 125)">
+    <!-- Gemini Vision Classification Card -->
+    <rect width="230" height="125" rx="12" fill="#0E101A" stroke="#ffffff" stroke-opacity="0.08"/>
+    
+    <div class="flex items-center gap-2">
+      <text x="16" y="25" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#ffffff">Google Gemini Vision API</text>
+    </div>
 
-  <rect x="524" y="440" width="232" height="22" rx="4" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="0.8"/>
-  <text x="640" y="455" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#34d399" text-anchor="middle">Avg Resolution: 2.4 Hours</text>
+    <!-- AI Output Details -->
+    <g transform="translate(16, 40)">
+      <rect width="198" height="26" rx="6" fill="url(#geminiGrad)" fill-opacity="0.15" stroke="#818CF8" stroke-opacity="0.3"/>
+      <text x="10" y="17" font-family="'JetBrains Mono', monospace" font-size="9" fill="#C084FC" font-weight="700">CLASSIFIED: PLASTIC &amp; E-WASTE</text>
+
+      <text x="0" y="44" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">Hazard Severity Level: MEDIUM</text>
+      <text x="0" y="60" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">Estimated Weight: 14 - 18 kg</text>
+      <text x="0" y="76" font-family="'JetBrains Mono', monospace" font-size="9" fill="#34D399">Auto Ticket #EC-4882 Dispatched</text>
+    </g>
+
+    <!-- Citizen Gamification & Eco Points Card -->
+    <g transform="translate(0, 140)">
+      <rect width="230" height="135" rx="12" fill="#0E101A" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="16" y="25" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#ffffff">Citizen Rewards Telemetry</text>
+
+      <g transform="translate(16, 40)">
+        <rect width="198" height="42" rx="8" fill="#10B981" fill-opacity="0.1" stroke="#10B981" stroke-opacity="0.3"/>
+        <text x="12" y="19" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94A3B8">CITIZEN REWARD EARNED</text>
+        <text x="12" y="34" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="bold" fill="#34D399">+150 ECO POINTS</text>
+        <text x="180" y="28" font-family="'JetBrains Mono', monospace" font-size="18" fill="#34D399" text-anchor="end">🌱</text>
+      </g>
+
+      <text x="16" y="105" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">Ward Leaderboard: #3 / 480 Citizens</text>
+      <text x="16" y="120" font-family="'JetBrains Mono', monospace" font-size="9" fill="#38BDF8">Civic Badge: Eco Champion 2026</text>
+    </g>
+  </g>
+
 </svg>
