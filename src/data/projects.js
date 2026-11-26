@@ -5,7 +5,7 @@ export const projectsData = [
     subtitle: "Multimodal Smart Agriculture Platform",
     tagline: "Combining Computer Vision, RAG, ReAct Agentic AI, and Malayalam Voice Interaction to empower farmers.",
     description: "An AI-powered agricultural platform combining computer vision for leaf disease diagnostics, RAG-based agronomic advisory, a custom ReAct agent with multi-tool calling, and bilingual Malayalam/English voice interaction.",
-    coverImage: "/projects/agripulse.svg",
+    coverImage: "/projects/agripulse-real.png",
     technologies: [
       "Python",
       "FastAPI",
@@ -52,7 +52,7 @@ export const projectsData = [
       myContribution: "Designed and engineered the full platform end-to-end: trained and fine-tuned the PyTorch MobileNet crop disease classifier, implemented OpenCV HSV lesion severity calculations, built the FastAPI AI service with ReAct agent tool calling, structured MongoDB Atlas data pipelines, and crafted the responsive React UI with Malayalam speech interaction.",
       architecture: "Farmer interacts via React frontend with Web Speech API. Image payloads route to FastAPI microservice where PyTorch runs CNN inference and OpenCV computes lesion severity percentage. User queries invoke a LangChain/ReAct agent that calls Open-Meteo and Mandi APIs, with RAG vector search over KAU/ICAR manuals. Session and telemetry data persist in MongoDB Atlas."
     },
-    github: "https://github.com/Athul3588krishna/agripulse-agrimitra360",
+    github: "https://github.com/Athul3588krishna/AgriPulse",
     liveDemo: "https://agripulse-demo.vercel.app",
     demoNote: "Flagship Multimodal AI Platform"
   },
@@ -62,7 +62,7 @@ export const projectsData = [
     subtitle: "Auto-Rickshaw Booking Platform | B.Sc Final Year Project",
     tagline: "Full-stack ride hailing with dedicated Passenger, Driver, and Admin modules and real-time Socket.IO tracking.",
     description: "A comprehensive ride-booking and fleet coordination platform engineered for regional auto-rickshaw transit. Features dedicated portals for Passengers, Drivers, and Municipal Admins with role-based access control and live geolocation tracking.",
-    coverImage: "/projects/ey-auto.svg",
+    coverImage: "/projects/ey-auto-real.png",
     technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO", "JWT Auth", "REST APIs"],
     featured: true,
     category: "Full Stack & Realtime",
@@ -90,7 +90,7 @@ export const projectsData = [
       myContribution: "Served as lead architect for B.Sc. Computer Science Final Year Project: designed the full MongoDB schema, implemented Socket.IO event handlers for trip lifecycle transitions, built secure Express authentication pipelines, and created the responsive React interface.",
       architecture: "React Single Page Application communicates with Express backend. Socket.IO maintains live bidirectional channels between passengers and nearby drivers. Trip records, user profiles, and ratings are stored in MongoDB."
     },
-    github: "https://github.com/Athul3588krishna/ey-auto",
+    github: "https://github.com/Athul3588krishna/VARAS-Ey-Auto-2.0",
     liveDemo: "https://ey-auto-preview.vercel.app",
     demoNote: "B.Sc. Final Year Project"
   },
@@ -100,7 +100,7 @@ export const projectsData = [
     subtitle: "Desktop Application with Offline-First Architecture",
     tagline: "Standalone retail point-of-sale solution with instant billing, inventory management, and local SQLite data integrity.",
     description: "A standalone cross-platform desktop POS application engineered for retail store management. Combines dynamic barcode billing, inventory replenishment tracking, and sales analytics with local SQLite storage for uninterrupted offline reliability.",
-    coverImage: "/projects/pos-system.svg",
+    coverImage: "/projects/pos-system-real.png",
     technologies: ["Electron.js", "React.js", "Node.js", "SQLite", "Tailwind CSS", "Desktop Architecture"],
     featured: true,
     category: "Desktop & Offline-First",
@@ -128,8 +128,8 @@ export const projectsData = [
       myContribution: "Architected the Electron.js desktop container, designed the relational SQLite schema for products, categories, transactions, and inventory logs, and built the high-speed checkout UI in React with Tailwind.",
       architecture: "Electron desktop wrapper houses a React UI renderer and Node.js main process. SQL queries execute directly against a local SQLite database file via IPC channels with full transactional atomicity."
     },
-    github: "https://github.com/Athul3588krishna/pos-management-system",
-    liveDemo: "https://github.com/Athul3588krishna/pos-management-system",
+    github: "https://github.com/Athul3588krishna/POS-Billing-System",
+    liveDemo: "https://github.com/Athul3588krishna/POS-Billing-System",
     demoNote: "Desktop Application Repository"
   },
   {
@@ -138,7 +138,7 @@ export const projectsData = [
     subtitle: "AI-Powered Smart Waste Management Portal",
     tagline: "Geotagged civic waste reporting with Google Gemini Vision AI classification and municipal dispatch.",
     description: "An AI-powered smart waste reporting portal enabling citizens to report waste dumps using photo capture and location-based mapping, with automated Gemini Vision classification and municipal resolution tracking.",
-    coverImage: "/projects/ecoclean.svg",
+    coverImage: "/projects/ecoclean-real.png",
     technologies: ["MERN Stack", "Google Gemini Vision API", "React.js", "Node.js", "Express.js", "MongoDB", "Leaflet.js"],
     featured: true,
     category: "AI & Full Stack",
@@ -166,7 +166,7 @@ export const projectsData = [
       myContribution: "Developed the full MERN application: set up the Express and MongoDB backend for complaint ticketing, integrated Gemini Vision API for automated classification, and built the reactive Leaflet map dashboard.",
       architecture: "React client uploads photo and GPS coordinates to Express backend. Backend dispatches image to Google Gemini Vision API for classification, stores structured record in MongoDB, and broadcasts update to municipal Leaflet map."
     },
-    github: "https://github.com/Athul3588krishna/ecoclean",
+    github: "https://github.com/Athul3588krishna/SM-Waste",
     liveDemo: "https://ecoclean-demo.vercel.app",
     demoNote: "Live AI Civic Portal"
   }
